@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/img1.jpg" type="image/x-icon">
+    <title>Té</title>
+    <style>
+        body {
+            max-width: 70%;
+            margin: 0 auto; /* Esto centrará el body en la página */
+            font-family: Arial, sans-serif;
+            background-image: url(../img/fondo.jpeg);
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header, .cuerpo {
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+        .header-container {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .titulo-cabecera{
+            font-size: 100px;
+        }
+        #logo {
+            margin-left: 20px;
+        }
+        nav {
+            color: black;
+            padding: 10px;
+            text-align: center;
+            width: 100%; /* Ocupa todo el ancho de la pantalla */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            border: 1px solid black;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            z-index: 1; /* Asegura que el nav esté arriba en la pila */
+            width: 250px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            background-color: #fff;
+            z-index: 2; /* Asegura que el nav esté arriba en la pila */
+            padding: 0;
+            width: 250px;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -1px;
+            padding: 10px;
+            background-color: #fff;
+        }
+        nav ul ul li {
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .header-container {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+        }
+        .footer-column{
+            flex: 1;
+            text-align: left;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="titulo-cabecera">EL MANDALA</h1>
+            <a href="../img/img1.jpg" target="_blank">
+                <img id="logo" src="../img/img1.jpg" alt="Logo" width="100px" height="100px">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <span class="search-icon" onclick="toggleSearch()">
+                        &#128269; <!-- Lupa Unicode -->
+                    </span>
+                    <input type="text" id="search-field" placeholder="Buscar en la página">
+                <li><a href="#">Productos y Servicios</a>
+                    <ul>
+                        <li><a href="#">Clases de Yoga</a></li>
+                        <li><a href="lampara_sal.html">Lámpara de Sal</a></li>
+                        <li><a href="te.html">Té</a></li>
+                        <li><a href="#">Incienso</a></li>
+                        <li><a href="#">Velas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">+ Sobre Nosotros</a>
+                    <ul>
+                        <li><a href="#">Donde Estamos</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                        <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cuerpo">
+        <h1>TÉ</h1>
+    </div>
+    
+    <footer class="cuerpo">
+        <div class="footer-container">
+            <!-- Columna izquierda -->
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>Gmail: ejemplo@gmail.com</p>
+                <p>Número: +123 456 789</p>
+                <p>Dirección: Calle Ejemplo, Ciudad</p>
+            </div>
+            
+            <!-- Columna derecha -->
+            <div class="footer-column">
+                <h3>Trabaja con Nosotros</h3>
+                <p>¡Únete a nuestro equipo!</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

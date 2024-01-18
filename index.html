@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/img1.jpg" type="image/x-icon">
+    <title>Inicio</title>
+    <style>
+        body {
+            max-width: 70%;
+            margin: 0 auto; /* Esto centrará el body en la página */
+            font-family: Arial, sans-serif;
+            background-image: url(img/fondo.jpeg);
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .titulo-cabecera{
+            font-size: 100px;
+        }
+        header, .cuerpo, footer {
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+        #logo {
+            margin-left: 20px;
+        }
+        nav {
+            color: black;
+            padding: 10px;
+            text-align: center;
+            width: 100%; /* Ocupa todo el ancho de la pantalla */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            border: 1px solid black;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            z-index: 1; /* Asegura que el nav esté arriba en la pila */
+            width: 250px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            background-color: #fff;
+            z-index: 2; /* Asegura que el nav esté arriba en la pila */
+            padding: 0;
+            width: 250px;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -1px;
+            padding: 10px;
+            background-color: #fff;
+        }
+        nav ul ul li {
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        .header-container {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+        }
+        .bloque1 {
+            order: 1;
+            align-self: flex-start;
+            text-align: right;
+
+        }
+        .bloque2 {
+            order: 2;
+            align-self: center;
+        }
+        .bloque3 {
+            order: 3;
+            align-self: flex-end;
+        }
+
+        .columna {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .imagen {
+            width: 90%;
+            height: auto;
+            margin-top: 50px;            
+        }
+        .imagen-lsmundo {
+            width: 90%;
+            height: auto;
+            margin-top: 20px;          
+        }
+        .imagen-sv {
+            width: 90%;
+            height: auto;          
+        }
+        .imagen-hc {
+            width: 90%;
+            height: auto;          
+        }
+        .titulo-mandala{
+            text-align: center;
+            font-size: 80px;
+            margin: 0;
+        }
+        .texto-mandala, .texto-lsmundo{
+            text-align: left;
+        }
+        .titulo-yoga, .beneficios-yoga, .texto-yoga {
+            text-align: left;
+        }
+        .titulo-yoga{
+            text-align: left;
+            margin-top: 0;
+        }
+        .titulo-sal{
+            text-align: left;
+        }
+        .imagen-yoga {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .footer-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+        }
+        .footer-column{
+            flex: 1;
+            text-align: left;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        #oferta-cartel {
+            position: static;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 130px;
+            height: 90px;
+            background-color: #3498db;
+            color: #fff;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        h1{
+            margin: 0;
+            margin-bottom: 20px; 
+        }
+        .descuento {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .articulo {
+            border-bottom: 1px solid #000; /* 1px de grosor, color negro */
+            padding-bottom: 25px; /* Ajusta según sea necesario */
+            margin-bottom: 20px; /* Ajusta según sea necesario */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="titulo-cabecera">EL MANDALA</h1>
+            <a href="img/img1.jpg" target="_blank">
+                <img id="logo" src="img/img1.jpg" alt="Logo" width="100px" height="100px">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <span class="search-icon" onclick="toggleSearch()">
+                        &#128269; <!-- Lupa Unicode -->
+                    </span>
+                    <input type="text" id="search-field" placeholder="Buscar en la página">
+                <li><a href="#">Productos y Servicios</a>
+                    <ul>
+                        <li><a href="#">Clases de Yoga</a></li>
+                        <li><a href="productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
+                        <li><a href="productos-servicios/te.html">Té</a></li>
+                        <li><a href="#">Incienso</a></li>
+                        <li><a href="#">Velas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">+ Sobre Nosotros</a>
+                    <ul>
+                        <li><a href="#">Donde Estamos</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                        <li><a href="sobre-nosotros/blog.html">Blog</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="cuerpo">
+        <div class="articulo">
+            <div class="contenedor">
+                <!-- Columna izquierda con título -->
+                <div class="bloque1">
+                  <h2 class="titulo-sal">LÁMPARA DE SAL</h2>
+                </div>
+                <!-- Columna central con imagen -->
+                <div class="bloque2">
+                  <img src="img/lsal_principal.jpeg" alt="Lámpara de Sal" class="imagen">
+                </div>
+                <!-- Columna derecha con cartel -->
+                <div class="bloque3">
+                    <div id="oferta-cartel">
+                        <div>
+                          <h3>EN TIENDA </h3>
+                          <h3> ONLINE</h3>
+                        </div>
+                        <div>
+                          <p class="descuento">30%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Lámparas de sal por el mundo</h2>
+            <div class="texto-lsmundo">
+                <p>Las lámparas de sal son populares en todo el mundo y se han convertido en elementos de decoración y bienestar en muchos hogares. Principalmente, estas lámparas están hechas de cristales de sal del Himalaya, que se extraen de las minas en la región montañosa de Pakistán, cerca de la cordillera del Himalaya. Sin embargo, su presencia se ha extendido a nivel global, y se pueden encontrar en una variedad de formas y tamaños, adaptándose a diferentes estilos de decoración.</p>
+                <p>En los mercados occidentales, las lámparas de sal han ganado popularidad como elementos decorativos que aportan un toque rústico y natural a los espacios interiores. A menudo, se esculpen y pulen a mano para resaltar la singularidad de cada cristal de sal. Se presentan en diversas formas, desde bloques sólidos hasta estructuras talladas más intrincadas, y se colocan en bases de madera o en soportes de metal.</p>
+                <p>Estas lámparas no solo se utilizan por su atractivo visual, sino que también se promocionan por sus posibles beneficios para la salud. Se cree que emiten iones negativos cuando se calientan con una bombilla, contribuyendo así a mejorar la calidad del aire al neutralizar los iones positivos. Además, la luz suave y cálida que emiten se considera relajante y propicia para crear un ambiente acogedor.</p>
+                <p>En resumen, las lámparas de sal son un fenómeno global, desde su origen en las montañas del Himalaya hasta su difusión como elementos decorativos y de bienestar en hogares de todo el mundo.</p>    
+            </div>   
+            <div class="contenedor">
+                <div>
+                    <img src="img/lsal_1.jpeg" alt="Lámpara de Sal" class="imagen-lsmundo">
+                </div>
+                <div>
+                    <img src="img/lsal_2.jpeg" alt="Lámpara de Sal" class="imagen-lsmundo">
+                </div>
+                <div>
+                    <img src="img/lsal_3.jpeg" alt="Lámpara de Sal" class="imagen-lsmundo">
+                </div>
+            </div>
+        </div>
+
+        <div class="articulo">
+            <h2 class="titulo-mandala ">¿Qué es el mandala?</h2>
+            <br>
+            <div class="texto-mandala">
+                <p>Bienvenidos a nuestro “oasis de serenidad”, un centro de meditación que fusiona la esencia científica. Exploramos el mundo de elementos considerados “míticos” desde una perspectiva fundamentada en la ciencia y la salud mental.</p>
+                <p>En nuestro centro descubrirás la armonía entre el cuerpo y la mente, ofreciendo un refugio para aquellos que buscan paz interior. Desde velas aromáticas hasta palo santo y lámparas de sal, cada elemento seleccionado tiene un impacto positivo en el bienestar mental.</p>
+                <p>En nuestro centro, la relajación se convierte en una experiencia educativa, donde la ciencia y la espiritualidad convergen para nutrir tu bienestar integral. Únete a nosotros en este viaje hacia la paz interior y descubre el equilibrio entre la mente y el espíritu de una manera completamente nueva.</p>    
+            </div>
+        </div>
+
+        <div class="articulo">
+            <div class="contenedor">
+                <!-- Columna izquierda con título -->
+                <div class="columna texto-yoga">
+                  <h2 class="titulo-yoga">¿Qué es el yoga?</h2>
+                  <p>
+                    El yoga es una práctica holística que busca el equilibrio y la armonía entre el cuerpo, la mente y el espíritu. Consiste en una combinación de posturas físicas, técnicas de respiración consciente, meditación y principios éticos que buscan mejorar la salud física, mental y espiritual.
+                  </p>
+                </div>
+                <!-- Columna central con imagen -->
+                <div class="columna">
+                  <img class="imagen-yoga" src="img/img3.png" alt="yoga" class="imagen">
+                </div>
+                <!-- Columna derecha con cartel -->
+                <div class="columna">
+                    <div class="columna beneficios-yoga">
+                        <h2 class="titulo-yoga">Beneficios del yoga en la salud</h2>
+                        <ul>
+                          <li>Reducción del Estrés</li>
+                          <li>Mejora del Estado de Ánimo</li>
+                          <li>Alivio de la Ansiedad</li>
+                          <li>Aumento de la Conciencia y Atención Plena</li>
+                          <li>Mejora del Sueño</li>
+                          <li>Aumento de la Resiliencia Emocional</li>
+                          <li>Mejora de la Concentración y Claridad Mental.</li>
+                          <li>Manejo de la Depresión</li>
+                          <li>Aumento de la Autoconciencia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="articulo">
+            <h1>San Valentín en El mandala</h1>
+            <div class="contenedor">
+                <div>
+                    <img src="img/sv1.jpeg" alt="San valentín" class="imagen-sv">
+                </div>
+                <div>
+                    <img src="img/sv2.jpeg" alt="San valentín" class="imagen-sv">
+                </div>
+            </div>
+        </div>
+
+        <div class="articulo">
+            <h1>Horarios y Clases</h1>
+            <img src="img/horarios_clases.jpeg" alt="Horarios y clases" class="imagen-hc">
+        </div>
+
+        <div class="articulo">
+            <h1>Por qué en Cádiz</h1>
+            <p>La felicidad que hay en la población de Cádiz encuentra sus raíces en una amalgama de elementos que convergen para crear un entorno propicio para el bienestar.</p>
+            <p>El clima benevolente y los paisajes marítimos proporcionan un escenario idílico, fomentando un estilo de vida activo y al aire libre. Las ricas tradiciones culturales y la proximidad comunitaria generan un fuerte sentido de identidad y conexión entre los habitantes. La dieta mediterránea, abundante en la región, no solo contribuye a la salud física sino que también se asocia con un bienestar emocional.</p>
+            <p>La estabilidad económica, junto con la belleza arquitectónica e histórica, completa el cuadro, creando un ambiente donde la felicidad florece de manera natural en cada rincón de Cádiz.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <!-- Columna izquierda -->
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>Gmail: ejemplo@gmail.com</p>
+                <p>Número: +123 456 789</p>
+                <p>Dirección: Calle Ejemplo, Ciudad</p>
+            </div>
+            
+            <!-- Columna derecha -->
+            <div class="footer-column">
+                <h3>Trabaja con Nosotros</h3>
+                <p>¡Únete a nuestro equipo!</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
