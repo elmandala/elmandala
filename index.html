@@ -53,6 +53,16 @@
             align-items: center;
             justify-content: center;
         }
+
+        .header-container-2 {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
         
         #logo {
             margin-left: 20px;
@@ -257,6 +267,49 @@
             padding-bottom: 25px; /* Ajusta según sea necesario */
             margin-bottom: 20px; /* Ajusta según sea necesario */
         }
+
+        /*carrito*/
+        .carrito {
+            position: relative;
+            padding: 10px;
+            align-items: center;
+            margin-left: 10px;
+            margin-bottom: 15px;
+
+        }
+
+        .carrito-icon {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .carrito-resumen {
+            display: none;
+            position: fixed;
+            top: 10px; /* Ajusta la distancia desde la parte superior según tus necesidades */
+            right: 50px; /* Ajusta la distancia desde la derecha según tus necesidades */
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .comprar-btn {
+            margin-top: 10px;
+            margin-left: 5px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #correo-input {
+            margin-top: 10px;
+            width: 90%;
+            padding: 5px;
+        }
+
     </style>
 </head>
 <body>
@@ -267,33 +320,46 @@
                 <img id="logo" src="img/img1.jpg" alt="Logo" width="100px" height="100px">
             </a>
         </div>
-        <nav>
-            <ul>
-                <li>
-                    <span class="search-icon" onclick="toggleSearch()">
-                        &#128269; <!-- Lupa Unicode -->
-                    </span>
-                    <input type="text" id="search-field" placeholder="Buscar en la página">
-                <li><a href="#">Productos y Servicios</a>
-                    <ul>
-                        <li><a href="#">Clases de Yoga</a></li>
-                        <li><a href="productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
-                        <li><a href="productos-servicios/te.html">Té</a></li>
-                        <li><a href="#">Incienso</a></li>
-                        <li><a href="#">Velas</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">+ Sobre Nosotros</a>
-                    <ul>
-                        <li><a href="#">Donde Estamos</a></li>
-                        <li><a href="#">Eventos</a></li>
-                        <li><a href="#">Contáctanos</a></li>
-                        <li><a href="sobre-nosotros/blog.html">Blog</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-container-2">
+            <nav>
+                <ul>
+                    <li>
+                        <span class="search-icon" onclick="toggleSearch()">
+                            &#128269; <!-- Lupa Unicode -->
+                        </span>
+                        <input type="text" id="search-field" placeholder="Buscar en la página">
+                    <li><a href="#">Productos y Servicios</a>
+                        <ul>
+                            <li><a href="#">Clases de Yoga</a></li>
+                            <li><a href="productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
+                            <li><a href="productos-servicios/te.html">Té</a></li>
+                            <li><a href="#">Incienso</a></li>
+                            <li><a href="#">Velas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">+ Sobre Nosotros</a>
+                        <ul>
+                            <li><a href="#">Donde Estamos</a></li>
+                            <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Contáctanos</a></li>
+                            <li><a href="sobre-nosotros/blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="carrito">
+                <span class="carrito-icon" onclick="toggleCarrito()">&#128722;</span>
+                <div class="carrito-resumen" id="carritoResumen">
+                    <!-- Contenido del carrito -->
+                    <div class="contenedor">
+                        <input type="text" id="correo-input" placeholder="Ingrese su correo">
+                        <button class="comprar-btn" onclick="realizarCompra()">Realizar compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </header>
     <div class="cuerpo">
         <div class="articulo">
@@ -416,5 +482,40 @@
             </div>
         </div>
     </footer>
+        <script>
+        // Función para mostrar/ocultar el resumen del carrito
+        function toggleCarrito() {
+            var carritoResumen = document.getElementById("carritoResumen");
+            carritoResumen.style.display = carritoResumen.style.display === "none" ? "block" : "none";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>    
+    <script>
+        (function(){
+            emailjs.init("vEqxMvQsgU5kCJJOH"); // Replace 'YOUR_PUBLIC_KEY' with your actual public key from EmailJS
+        })();
+    </script>
+    <script>
+        function realizarCompra() {
+            var correoCliente = document.getElementById('correo-input').value;
+            var templateParams = {
+                email: correoCliente,
+                greeting: 'hola' // Adding the "hola" message
+                // Add other parameters you want to include in the email, like purchase details
+            };
+
+            emailjs.send('service_42gffp8', 'template_zpmza5r', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Compra realizada con éxito. Se ha enviado un correo de confirmación.');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Error al realizar la compra. Por favor, inténtelo de nuevo.');
+                });
+        }
+
+    </script>
+    
+
 </body>
 </html>
