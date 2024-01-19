@@ -6,6 +6,19 @@
     <link rel="icon" href="../img/img1.jpg" type="image/x-icon">
     <title>Té</title>
     <style>
+        @font-face {
+            font-family: 'Anaktoria';
+            src: url('../fuentes/Anaktoria/Anaktoria.otf') format('opentype');
+        }
+        h1{
+            font-family: 'Anaktoria', sans-serif;
+            margin: 0;
+            margin-bottom: 20px; 
+        }
+        h2{
+            font-family: 'Anaktoria', sans-serif;
+            margin: 0;
+        }
         body {
             max-width: 70%;
             margin: 0 auto; /* Esto centrará el body en la página */
@@ -16,13 +29,30 @@
             flex-direction: column;
             align-items: center;
         }
-        header, .cuerpo {
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        .cuerpo{
             background-color: #fff;
             width: 100%;
             text-align: center;
             padding: 30px;
             position: relative;
         }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        /*header*/
         .header-container {
             list-style: none;
             margin: 0;
@@ -32,12 +62,11 @@
             align-items: center;
             justify-content: center;
         }
-        .titulo-cabecera{
-            font-size: 100px;
-        }
+        
         #logo {
             margin-left: 20px;
         }
+
         nav {
             color: black;
             padding: 10px;
@@ -53,11 +82,15 @@
         }
         nav ul li {
             border: 1px solid black;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
             position: relative;
             z-index: 1; /* Asegura que el nav esté arriba en la pila */
             width: 250px;
+            display: flex; /* Hace que los elementos flexibles */
+            align-items: center; /* Centra verticalmente los elementos */
+            justify-content: center;
         }
 
         nav ul li:hover ul {
@@ -85,15 +118,13 @@
             color: black;
             text-decoration: none;
         }
+        .titulo-cabecera{
+            font-size: 100px;
+        }
 
-        .header-container {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+        .imagen-te {
+            width: 50%;
+            height: auto;           
         }
 
         .footer-container{
@@ -108,7 +139,6 @@
             margin-left: 40px;
             margin-right: 40px;
         }
-
     </style>
 </head>
 <body>
@@ -149,10 +179,15 @@
     </header>
 
     <div class="cuerpo">
-        <h1>TÉ</h1>
+        <h1>Té</h1>
+        <img src="../img/te.jpeg" alt="Té" class="imagen-te">
+        <p>Optar por comprar té no es simplemente una elección culinaria, sino una decisión que promueve el bienestar integral. Las distintas variedades de té no solo ofrecen una experiencia sensorial única, sino que también aportan numerosos beneficios para la salud.</p>
+        <p>Desde las propiedades antioxidantes hasta las infusiones que promueven la relajación y mejoran la digestión, el té se convierte en una opción versátil y beneficiosa.</p>
+        <p>Además de su riqueza en sabores y aromas, el té puede convertirse en un ritual diario que proporciona un momento de calma y reflexión, promoviendo así la salud mental.</p>
+        <p>Al elegir comprar té, no solo se está seleccionando una bebida, sino también un hábito que puede contribuir a una vida más equilibrada y saludable, transformando la pausa para el té en un momento de cuidado personal y disfrute consciente.</p>    
     </div>
     
-    <footer class="cuerpo">
+    <footer>
         <div class="footer-container">
             <!-- Columna izquierda -->
             <div class="footer-column">
@@ -160,12 +195,13 @@
                 <p>Gmail: ejemplo@gmail.com</p>
                 <p>Número: +123 456 789</p>
                 <p>Dirección: Calle Ejemplo, Ciudad</p>
+                <h3>Trabaja con Nosotros</h3>
+                <p>¡Únete a nuestro equipo!</p>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <img id="logo" src="../img/img1.jpg" alt="Logo" width="300px" height="300px">
             </div>
         </div>
     </footer>

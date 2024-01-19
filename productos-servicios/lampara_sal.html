@@ -6,6 +6,19 @@
     <link rel="icon" href="../img/img1.jpg" type="image/x-icon">
     <title>Lámpara de sal</title>
     <style>
+        @font-face {
+            font-family: 'Anaktoria';
+            src: url('../fuentes/Anaktoria/Anaktoria.otf') format('opentype');
+        }
+        h1{
+            font-family: 'Anaktoria', sans-serif;
+            margin: 0;
+            margin-bottom: 20px; 
+        }
+        h2{
+            font-family: 'Anaktoria', sans-serif;
+            margin: 0;
+        }
         body {
             max-width: 70%;
             margin: 0 auto; /* Esto centrará el body en la página */
@@ -16,13 +29,30 @@
             flex-direction: column;
             align-items: center;
         }
-        header, .cuerpo {
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        .cuerpo{
             background-color: #fff;
             width: 100%;
             text-align: center;
             padding: 30px;
             position: relative;
         }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        /*header*/
         .header-container {
             list-style: none;
             margin: 0;
@@ -32,12 +62,11 @@
             align-items: center;
             justify-content: center;
         }
-        .titulo-cabecera{
-            font-size: 100px;
-        }
+        
         #logo {
             margin-left: 20px;
         }
+
         nav {
             color: black;
             padding: 10px;
@@ -53,11 +82,15 @@
         }
         nav ul li {
             border: 1px solid black;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
             position: relative;
             z-index: 1; /* Asegura que el nav esté arriba en la pila */
             width: 250px;
+            display: flex; /* Hace que los elementos flexibles */
+            align-items: center; /* Centra verticalmente los elementos */
+            justify-content: center;
         }
 
         nav ul li:hover ul {
@@ -85,15 +118,8 @@
             color: black;
             text-decoration: none;
         }
-
-        .header-container {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+        .titulo-cabecera{
+            font-size: 100px;
         }
 
         .footer-container{
@@ -108,7 +134,6 @@
             margin-left: 40px;
             margin-right: 40px;
         }
-
     </style>
 </head>
 <body>
@@ -150,9 +175,13 @@
 
     <div class="cuerpo">
         <h1>Lámpara de Sal</h1>
+        <p>Comprar una lámpara de sal no solo es adquirir un objeto decorativo, sino una inversión en bienestar. Estas lámparas, talladas a mano a partir de cristales de sal del Himalaya, emiten una suave luz que crea una atmósfera cálida y relajante en cualquier espacio.</p>
+        <p>Además de su atractivo estético, las lámparas de sal son conocidas por sus posibles beneficios para la salud, ya que se cree que liberan iones negativos que purifican el aire y pueden mejorar la calidad del sueño.</p>
+        <p>Este elemento natural no solo agrega un toque distintivo a la decoración, sino que también contribuye a un ambiente más tranquilo y equilibrado, convirtiéndose en una adición armoniosa para el hogar o espacio de trabajo.</p>
+        <p>En última instancia, comprar una lámpara de sal no solo es una decisión estilística, sino una elección consciente en favor de un ambiente más saludable y relajante.</p>
     </div>
     
-    <footer class="cuerpo">
+    <footer>
         <div class="footer-container">
             <!-- Columna izquierda -->
             <div class="footer-column">
@@ -160,12 +189,13 @@
                 <p>Gmail: ejemplo@gmail.com</p>
                 <p>Número: +123 456 789</p>
                 <p>Dirección: Calle Ejemplo, Ciudad</p>
+                <h3>Trabaja con Nosotros</h3>
+                <p>¡Únete a nuestro equipo!</p>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <img id="logo" src="../img/img1.jpg" alt="Logo" width="300px" height="300px">
             </div>
         </div>
     </footer>

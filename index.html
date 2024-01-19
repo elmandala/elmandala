@@ -6,6 +6,10 @@
     <link rel="icon" href="img/img1.jpg" type="image/x-icon">
     <title>Inicio</title>
     <style>
+        @font-face {
+            font-family: 'Anaktoria';
+            src: url('fuentes/Anaktoria/Anaktoria.otf') format('opentype');
+        }
         body {
             max-width: 70%;
             margin: 0 auto; /* Esto centrará el body en la página */
@@ -16,19 +20,44 @@
             flex-direction: column;
             align-items: center;
         }
-        .titulo-cabecera{
-            font-size: 100px;
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 30px;
+            position: relative;
         }
-        header, .cuerpo, footer {
+
+        .cuerpo{
             background-color: #fff;
             width: 100%;
             text-align: center;
             padding: 30px;
             position: relative;
         }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        /*header*/
+        .header-container {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
         #logo {
             margin-left: 20px;
         }
+
         nav {
             color: black;
             padding: 10px;
@@ -44,11 +73,15 @@
         }
         nav ul li {
             border: 1px solid black;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
             position: relative;
             z-index: 1; /* Asegura que el nav esté arriba en la pila */
             width: 250px;
+            display: flex; /* Hace que los elementos flexibles */
+            align-items: center; /* Centra verticalmente los elementos */
+            justify-content: center;
         }
 
         nav ul li:hover ul {
@@ -75,15 +108,6 @@
         a {
             color: black;
             text-decoration: none;
-        }
-        .header-container {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
         }
 
         .contenedor {
@@ -113,10 +137,22 @@
             padding: 10px;
             box-sizing: border-box;
         }
+
+        .columna-central {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+            border-left: 1px solid #000; /* 1px de grosor, color negro */
+            border-right: 1px solid #000; /* 1px de grosor, color negro */
+        }
         .imagen {
             width: 90%;
             height: auto;
             margin-top: 50px;            
+        }
+        .imagen-sal {
+            width: 65%;
+            height: auto;           
         }
         .imagen-lsmundo {
             width: 90%;
@@ -131,24 +167,43 @@
             width: 90%;
             height: auto;          
         }
+
+        .texto-mandala, .texto-lsmundo, .texto-cadiz{
+            text-align: center;
+        }
+        .beneficios-yoga, .texto-yoga {
+            text-align: center;
+            padding: 0;
+        }
+        .beneficios-yoga ul {
+            list-style-type: none; /* Elimina los puntos de la lista */
+            padding: 0; /* Elimina el padding predeterminado de la lista */
+        }
+
+        .beneficios-yoga ul li {
+            margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
+        }
+
+        .titulo-cabecera{
+            font-size: 100px;
+        }
+
+        .titulo-sal{
+            text-align: center;
+            font-size: 60px;
+        }
+
         .titulo-mandala{
             text-align: center;
-            font-size: 80px;
+            font-size: 70px;
             margin: 0;
         }
-        .texto-mandala, .texto-lsmundo, .texto-cadiz{
-            text-align: left;
-        }
-        .titulo-yoga, .beneficios-yoga, .texto-yoga {
-            text-align: left;
-        }
+
         .titulo-yoga{
-            text-align: left;
+            text-align: center;
             margin-top: 0;
         }
-        .titulo-sal{
-            text-align: left;
-        }
+
         .imagen-yoga {
             max-width: 80%;
             height: auto;
@@ -184,8 +239,13 @@
             padding-right: 10px;
         }
         h1{
+            font-family: 'Anaktoria', sans-serif;
             margin: 0;
             margin-bottom: 20px; 
+        }
+        h2{
+            font-family: 'Anaktoria', sans-serif;
+            margin: 0;
         }
         .descuento {
             font-size: 30px;
@@ -236,28 +296,9 @@
     </header>
     <div class="cuerpo">
         <div class="articulo">
-            <div class="contenedor">
-                <!-- Columna izquierda con título -->
-                <div class="bloque1">
-                  <h2 class="titulo-sal">LÁMPARA DE SAL</h2>
-                </div>
-                <!-- Columna central con imagen -->
-                <div class="bloque2">
-                  <img src="img/lsal_principal.jpeg" alt="Lámpara de Sal" class="imagen">
-                </div>
-                <!-- Columna derecha con cartel -->
-                <div class="bloque3">
-                    <div id="oferta-cartel">
-                        <div>
-                          <h3>EN TIENDA </h3>
-                          <h3> ONLINE</h3>
-                        </div>
-                        <div>
-                          <p class="descuento">30%</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 class="titulo-sal">LÁMPARA DE SAL</h2>
+            <img src="img/lsal_principal.jpeg" alt="Lámpara de Sal" class="imagen-sal">
+
             <h2>Lámparas de sal por el mundo</h2>
             <div class="texto-lsmundo">
                 <p>Las lámparas de sal son populares en todo el mundo y se han convertido en elementos de decoración y bienestar en muchos hogares. Principalmente, estas lámparas están hechas de cristales de sal del Himalaya, que se extraen de las minas en la región montañosa de Pakistán, cerca de la cordillera del Himalaya. Sin embargo, su presencia se ha extendido a nivel global, y se pueden encontrar en una variedad de formas y tamaños, adaptándose a diferentes estilos de decoración.</p>
@@ -291,15 +332,15 @@
         <div class="articulo">
             <div class="contenedor">
                 <!-- Columna izquierda con título -->
-                <div class="columna texto-yoga">
+                <div class="columna">
                   <h2 class="titulo-yoga">¿Qué es el yoga?</h2>
-                  <p>
+                  <p class="texto-yoga">
                     El yoga es una práctica holística que busca el equilibrio y la armonía entre el cuerpo, la mente y el espíritu. Consiste en una combinación de posturas físicas, técnicas de respiración consciente, meditación y principios éticos que buscan mejorar la salud física, mental y espiritual.
                   </p>
                 </div>
                 <!-- Columna central con imagen -->
-                <div class="columna">
-                  <img class="imagen-yoga" src="img/img3.png" alt="yoga" class="imagen">
+                <div class="columna-central">
+                        <img class="imagen-yoga" src="img/img3.png" alt="yoga">
                 </div>
                 <!-- Columna derecha con cartel -->
                 <div class="columna">
@@ -323,12 +364,19 @@
 
         <div class="articulo">
             <h1>San Valentín en El mandala</h1>
-            <div class="contenedor">
+            <div>
                 <div>
-                    <img src="img/sv1.jpeg" alt="San valentín" class="imagen-sv">
+                    <p>El yoga desempeña un papel notable en las relaciones románticas al ofrecer no solo beneficios físicos, sino también una profunda conexión emocional. La práctica regular de yoga fomenta la conciencia plena y la aceptación personal, creando individuos más equilibrados y seguros.</p>
+                    <p>En el contexto de las relaciones, esto se traduce en una mayor capacidad para comprender y apoyar a la pareja. La calma mental cultivada a través del yoga contribuye a manejar el estrés y las tensiones cotidianas, promoviendo un ambiente relajado y propicio para la comunicación efectiva. Además, las posturas compartidas y la sincronización respiratoria en las clases de yoga pueden fortalecer la conexión física y emocional entre los socios, creando un espacio compartido que va más allá de lo físico.</p>
+                    <p>En resumen, el yoga emerge como un catalizador que no solo mejora la salud individual, sino que también enriquece y fortalece las relaciones románticas al cultivar la empatía, la aceptación y la conexión profunda entre los compañeros.</p>    
                 </div>
-                <div>
-                    <img src="img/sv2.jpeg" alt="San valentín" class="imagen-sv">
+                <div class="contenedor">
+                    <div>
+                        <img src="img/sv1.jpeg" alt="San valentín" class="imagen-sv">
+                    </div>
+                    <div>
+                        <img src="img/sv2.jpeg" alt="San valentín" class="imagen-sv">
+                    </div>
                 </div>
             </div>
         </div>
@@ -338,7 +386,7 @@
             <img src="img/horarios_clases.jpeg" alt="Horarios y clases" class="imagen-hc">
         </div>
 
-        <div class="articulo">
+        <div>
             <h1>Por qué en Cádiz</h1>
             <div class="texto-cadiz">
                 <p>La felicidad que hay en la población de Cádiz encuentra sus raíces en una amalgama de elementos que convergen para crear un entorno propicio para el bienestar.</p>
@@ -357,12 +405,13 @@
                 <p>Gmail: ejemplo@gmail.com</p>
                 <p>Número: +123 456 789</p>
                 <p>Dirección: Calle Ejemplo, Ciudad</p>
+                <h3>Trabaja con Nosotros</h3>
+                <p>¡Únete a nuestro equipo!</p>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <img id="logo" src="img/img1.jpg" alt="Logo" width="300px" height="300px">
             </div>
         </div>
     </footer>

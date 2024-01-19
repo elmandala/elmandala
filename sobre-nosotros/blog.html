@@ -6,6 +6,20 @@
     <link rel="icon" href="../img/img1.jpg" type="image/x-icon">
     <title>Blog</title>
     <style>
+        @font-face {
+            font-family: 'Anaktoria';
+            src: url('../fuentes/Anaktoria/Anaktoria.otf') format('opentype');
+        }
+        h1{
+            font-family: 'Anaktoria', sans-serif;
+            margin: 0;
+            margin-bottom: 20px; 
+        }
+        h2{
+            font-family: 'Anaktoria', sans-serif;
+            margin: 0;
+        }
+
         body {
             max-width: 70%;
             margin: 0 auto; /* Esto centrará el body en la página */
@@ -16,13 +30,30 @@
             flex-direction: column;
             align-items: center;
         }
-        header, .cuerpo {
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        .cuerpo{
             background-color: #fff;
             width: 100%;
             text-align: center;
             padding: 30px;
             position: relative;
         }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        /*header*/
         .header-container {
             list-style: none;
             margin: 0;
@@ -32,12 +63,11 @@
             align-items: center;
             justify-content: center;
         }
-        .titulo-cabecera{
-            font-size: 100px;
-        }
+        
         #logo {
             margin-left: 20px;
         }
+
         nav {
             color: black;
             padding: 10px;
@@ -53,11 +83,15 @@
         }
         nav ul li {
             border: 1px solid black;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
             position: relative;
             z-index: 1; /* Asegura que el nav esté arriba en la pila */
             width: 250px;
+            display: flex; /* Hace que los elementos flexibles */
+            align-items: center; /* Centra verticalmente los elementos */
+            justify-content: center;
         }
 
         nav ul li:hover ul {
@@ -85,15 +119,22 @@
             color: black;
             text-decoration: none;
         }
+        .titulo-cabecera{
+            font-size: 100px;
+        }
 
-        .header-container {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+        .articulo {
+            border-bottom: 1px solid #000; /* 1px de grosor, color negro */
+            padding-bottom: 25px; /* Ajusta según sea necesario */
+            margin-bottom: 20px; /* Ajusta según sea necesario */
+        }
+        ul {
+            list-style-type: none; /* Elimina los puntos de la lista */
+            padding: 0; /* Elimina el padding predeterminado de la lista */
+        }
+
+        ul li {
+            margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
         }
 
         .footer-container{
@@ -108,7 +149,6 @@
             margin-left: 40px;
             margin-right: 40px;
         }
-
     </style>
 </head>
 <body>
@@ -149,10 +189,40 @@
     </header>
 
     <div class="cuerpo">
-        <h1>BLOG PERSONAL</h1>
+        <h1>Blog</h1>
+        <div class="articulo">
+            <h2>Introducción</h2>
+            <p>En este blog, nos sumergimos en el fascinante mundo de la ciencia y la espiritualidad que converge en nuestro oasis de serenidad en El Mandala. Descubre cómo elementos míticos se entrelazan con la lógica científica para nutrir tu bienestar integral y alcanzar un equilibrio entre la mente y el espíritu</p>
+        </div>
+
+        <div class="articulo">
+            <h2>La Ciencia Detrás de la Serenidad:</h2>
+            <p><a href="https://www.ejemplo.com" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4895748/</a>.</p>
+            <p>Hasta hace algunos años, muchos pensaban que el fin del yoga y la meditación era meramente espiritual; sin embargo, tras popularizarse su práctica, se comprobó que también es una forma de aumentar nuestro bienestar físico y mental. ¿Conoces los beneficios del Yoga y la meditación?</p>
+            <p>Más allá de su capacidad para ayudarnos a mejorar la concentración y reducir los efectos del estrés, el yoga y la meditación tiene otros beneficios que al principio pasamos por alto. Incluso, muchos de estos efectos están respaldados por la ciencia y son el motivo por el cual se aconseja su práctica.</p>
+            <p>Y es que, cuando practicamos yoga y la meditación entramos en un estado de introspección que nos permite contemplar el “aquí y el ahora” para dar una mejor gestión a nuestras emociones. Asimismo, nuestro cuerpo se relaja y experimentamos una disminución de las tensiones y dolencias que nos aquejan. Lo más interesante es que hoy en día podemos entrenarla desde cualquier lugar, sin importar la hora, nos orientan su práctica a través de diferentes técnicas y ejercicios.</p>
+            <p>Para que no te queden dudas, a continuación, queremos compartir en detalle los principales beneficios físicos, mentales y emocionales que puedes obtener gracias al yoga y la meditación constante.</p>    
+        </div>
+
+        <div>
+            <h1>Mindfulness</h1>
+            <p>El mindfulness, también conocido como "atención plena" o "conciencia plena", es una práctica que se originó en las enseñanzas budistas, pero que ha sido adoptada y adaptada en contextos más amplios, incluyendo la psicología y la medicina occidentales. Se refiere a la capacidad de prestar atención de manera consciente y deliberada al momento presente, sin juzgarlo.</p>
+            <p>La práctica regular de mindfulness puede tener una variedad de beneficios para la salud mental y física. Incorporando mindfulness conseguirás:</p>
+            <ul>
+                <li>Mejora de la Concentración</li>
+                <li>Regulación Emocional</li>
+                <li>Mejora del Bienestar Mental</li>
+                <li>Reducción de la Ansiedad y Depresión</li>
+                <li>Mayor Conciencia Corporal</li>
+                <li>Mejora del Sueño</li>
+                <li>Aumento de la Resiliencia</li>
+                <li>Mejora de las Relaciones Interpersonales</li>
+                <li>Desarrollo de la Autoconciencia</li>
+            </ul>
+        </div>
     </div>
-    
-    <footer class="cuerpo">
+
+    <footer>
         <div class="footer-container">
             <!-- Columna izquierda -->
             <div class="footer-column">
@@ -160,12 +230,13 @@
                 <p>Gmail: ejemplo@gmail.com</p>
                 <p>Número: +123 456 789</p>
                 <p>Dirección: Calle Ejemplo, Ciudad</p>
+                <h3>Trabaja con Nosotros</h3>
+                <p>¡Únete a nuestro equipo!</p>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <img id="logo" src="../img/img1.jpg" alt="Logo" width="300px" height="300px">
             </div>
         </div>
     </footer>
