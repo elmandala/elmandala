@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../general.css">
+    <script src="../general.js"></script>
+    <title>Carrito de Compras</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
+            <a href="img/img1.jpg" target="_blank">
+                <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
+            </a>
+        </div>
+        <div class="header-container-2">
+            <nav>
+                <ul>
+                    <li>
+                        <span class="search-icon" onclick="toggleSearch()">
+                            &#128269; <!-- Lupa Unicode -->
+                        </span>
+                        <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                    <li><a href="#">Productos y Servicios</a>
+                        <ul>
+                            <li><a href="#">Clases de Yoga</a></li>
+                            <li><a href="../productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
+                            <li><a href="../productos-servicios/te.html">Té</a></li>
+                            <li><a href="#">Incienso</a></li>
+                            <li><a href="#">Velas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">+ Sobre Nosotros</a>
+                        <ul>
+                            <li><a href="#">Donde Estamos</a></li>
+                            <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Contáctanos</a></li>
+                            <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="carrito">
+                <a class="carrito-icon"  onclick="volverPagina()">&#128722;</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="cuerpo">
+        <section id="cesta" class="cesta-titulo">
+            <h2>Cesta</h2>
+            <button id="vaciar-carrito">Eliminar todos los productos</button>
+        </section>
+    
+        <hr>
+    
+        <section id="carrito" class="carrito-grid">
+            <!-- Aquí se mostrarán los productos en el carrito -->
+        </section>
+    
+        <script src="carrito.js"></script>
+    
+        <div class="total-pago">
+            <p id="total-carrito">Total: 0€</p>
+            <form id="formulario-compra">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <button type="button" onclick="realizarCompra()">Realizar compra</button>
+            </form>
+            <div>
+                <p id="mensaje-correo" style="color: red;"></p>
+                <p id="mensaje-producto" style="color: red;"></p>
+                <p id="mensaje-producto2" style="color: red;"></p>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script>
+            (function () {
+                emailjs.init("vEqxMvQsgU5kCJJOH");
+            })();
+        </script>
+        <div class="boton-volver">
+            <button  onclick="volverPagina()">Volver</button>
+        </div>
+        <script>
+            function realizarCompra() {
+                const emailInput = document.getElementById('email');
+                const email = emailInput.value;
+                const mensajeProducto = document.getElementById('mensaje-producto');
+                const mensajeProducto2 = document.getElementById('mensaje-producto2');
+                const mensajeCorreo = document.getElementById('mensaje-correo');
+    
+                // Limpiar los mensajes de error
+                mensajeProducto.textContent = '';
+                mensajeProducto2.textContent = '';
+                mensajeCorreo.textContent = '';
+    
+                // Verificar que se haya ingresado un correo
+                if (!email || !email.trim()) {
+                    mensajeCorreo.textContent = 'Por favor, ingrese una dirección de correo electrónico.';
+                    emailInput.focus();
+                    return;
+                }
+    
+                const carrito = JSON.parse(localStorage.getItem('carrito')) || {};
+    
+                // Verificar si el carrito está vacío
+                if (Object.keys(carrito).length === 0) {
+                    mensajeProducto.textContent = 'Añade al menos un producto al carrito antes de realizar la compra.';
+                    return;
+                }
+    
+                // Verificar si al menos un producto tiene una cantidad mayor a 0
+                const tieneProductosConCantidad = Object.values(carrito).some(producto => producto.cantidad > 0);
+    
+                if (!tieneProductosConCantidad) {
+                    mensajeProducto2.textContent = 'Añade al menos un producto con cantidad mayor a 0 al carrito.';
+                    return;
+                }
+    
+                const total = calcularTotal();
+    
+                let cuerpoDelCorreo = `Estimado cliente,\n\nGracias por tu compra. Aquí están los detalles:\n\n`;
+    
+                for (const producto in carrito) {
+                    const cantidad = carrito[producto].cantidad;
+                    const precio = carrito[producto].precio;
+                    if (cantidad > 0) {
+                        cuerpoDelCorreo += `${producto}: ${cantidad} x ${precio}€\n`;
+                    }
+                }
+    
+                cuerpoDelCorreo += `\nTotal: ${total.toFixed(2)}€`;
+    
+                emailjs.send('service_42gffp8', 'template_zpmza5r', {
+                    to_email: email,
+                    from_name: 'ElMandala',
+                    message: cuerpoDelCorreo,
+                })
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        alert('Compra realizada con éxito. Se ha enviado un resumen de la compra a su correo.');
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                        alert('Error al realizar la compra. Por favor, inténtelo de nuevo.');
+                    });
+            }
+        </script>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <!-- Columna izquierda -->
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>Gmail: ejemplo@gmail.com</p>
+                <p>Número: +123 456 789</p>
+                <p>Dirección: Calle Ejemplo, Ciudad</p>
+                <h3>Trabaja con Nosotros</h3>
+                <p>¡Únete a nuestro equipo!</p>
+            </div>
+            
+            <!-- Columna derecha -->
+            <div class="footer-column">
+                <img id="logo" src="../img/img1.jpg" alt="logo-footer" width="300px" height="300px">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+.carrito-grid {
+    display: flex; /* Cambiado de grid a flex */
+    flex-direction: column; /* Alinea los elementos en columna (uno debajo del otro) */
+    gap: 10px; /* Espacio entre los elementos */
+    padding: 10px; /* Ajusta el espacio interno del contenedor del carrito */
+    align-items: center;
+}
+
+.carrito-item {
+    display: flex; /* Cambiado de grid a flex */
+    justify-content: space-between; /* Distribuye los elementos de manera uniforme */
+    align-items: center; /* Alinea verticalmente los elementos del item */
+    border-bottom: 1px solid #000; /* Línea horizontal negra entre ítems */
+    padding: 10px; /* Ajusta el espacio interno del item */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.carrito-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Ajusta el espacio entre la imagen y el texto */
+}
+
+.carrito-item p {
+    margin: 0;
+    flex-grow: 1; /* Hace que ocupe todo el espacio disponible */
+}
+
+.carrito-item button {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Estilos para el apartado de la cesta */
+.cesta-titulo {
+    padding: 10px;
+    text-align: left;
+    
+}
+
+.cesta-titulo h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
+/* Estilo para la línea negra */
+hr {
+    border: 1px solid black;
+    width: 100%;
+}
+
+
+#productos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.producto {
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+}
+
+.total-pago{
+    margin-left: 10px;
+    text-align: left;
+}
+
+.boton-cantidad {
+    width: 30px; /* Ajusta esto al tamaño que desees */
+    height: 30px; /* Ajusta esto al tamaño que desees */
+}
+
+.boton-volver{
+    margin-left: 10px;
+    text-align: left;
+}

@@ -4,121 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/img1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="general.css">
+    <script src="general.js"></script>
     <title>Inicio</title>
     <style>
-        @font-face {
-            font-family: 'Anaktoria';
-            src: url('fuentes/Anaktoria/Anaktoria.otf') format('opentype');
-        }
-        body {
-            max-width: 70%;
-            margin: 0 auto; /* Esto centrará el body en la página */
-            font-family: Arial, sans-serif;
-            background-image: url(img/fondo.jpeg);
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            width: 100%;
+        .titulo-sal{
             text-align: center;
-            padding-bottom: 30px;
-            position: relative;
+            font-size: 60px;
+        }
+        .imagen-sal {
+            width: 65%;
+            height: auto;           
         }
 
-        .cuerpo{
-            background-color: #fff;
-            width: 100%;
+        .texto-lsmundo{
             text-align: center;
-            padding: 30px;
-            position: relative;
+        }
+        .imagen-lsmundo {
+            width: 90%;
+            height: auto;
+            margin-top: 20px;          
         }
 
-        footer {
-            width: 100%;
+        .titulo-mandala{
             text-align: center;
-            padding: 30px;
-            position: relative;
-        }
-
-        /*header*/
-        .header-container {
-            list-style: none;
+            font-size: 70px;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
         }
-
-        .header-container-2 {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        
-        #logo {
-            margin-left: 20px;
-        }
-
-        nav {
-            color: black;
-            padding: 10px;
+        .texto-mandala{
             text-align: center;
-            width: 100%; /* Ocupa todo el ancho de la pantalla */
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            border: 1px solid black;
-            padding: 5px;
-            padding-left: 10px;
-            padding-right: 10px;
-            margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
-            position: relative;
-            z-index: 1; /* Asegura que el nav esté arriba en la pila */
-            width: 250px;
-            display: flex; /* Hace que los elementos flexibles */
-            align-items: center; /* Centra verticalmente los elementos */
-            justify-content: center;
-        }
-
-        nav ul li:hover ul {
-            display: block;
-            background-color: #fff;
-            z-index: 2; /* Asegura que el nav esté arriba en la pila */
-            padding: 0;
-            width: 250px;
-        }
-        nav ul ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: -1px;
-            padding: 10px;
-            background-color: #fff;
-        }
-        nav ul ul li {
-            background-color: #fff;
-            width: 100%;
-            text-align: center;
-        }
-
-        a {
-            color: black;
-            text-decoration: none;
         }
 
         .contenedor {
@@ -128,59 +42,10 @@
             width: 100%;
             margin: 0;
         }
-        .bloque1 {
-            order: 1;
-            align-self: flex-start;
-            text-align: right;
-
-        }
-        .bloque2 {
-            order: 2;
-            align-self: center;
-        }
-        .bloque3 {
-            order: 3;
-            align-self: flex-end;
-        }
-
         .columna {
             flex: 1;
             padding: 10px;
             box-sizing: border-box;
-        }
-
-        .columna-central {
-            flex: 1;
-            padding: 10px;
-            box-sizing: border-box;
-            border-left: 1px solid #000; /* 1px de grosor, color negro */
-            border-right: 1px solid #000; /* 1px de grosor, color negro */
-        }
-        .imagen {
-            width: 90%;
-            height: auto;
-            margin-top: 50px;            
-        }
-        .imagen-sal {
-            width: 65%;
-            height: auto;           
-        }
-        .imagen-lsmundo {
-            width: 90%;
-            height: auto;
-            margin-top: 20px;          
-        }
-        .imagen-sv {
-            width: 90%;
-            height: auto;          
-        }
-        .imagen-hc {
-            width: 90%;
-            height: auto;          
-        }
-
-        .texto-mandala, .texto-lsmundo, .texto-cadiz{
-            text-align: center;
         }
         .beneficios-yoga, .texto-yoga {
             text-align: center;
@@ -195,21 +60,6 @@
             margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
         }
 
-        .titulo-cabecera{
-            font-size: 100px;
-        }
-
-        .titulo-sal{
-            text-align: center;
-            font-size: 60px;
-        }
-
-        .titulo-mandala{
-            text-align: center;
-            font-size: 70px;
-            margin: 0;
-        }
-
         .titulo-yoga{
             text-align: center;
             margin-top: 0;
@@ -221,103 +71,34 @@
             display: block;
             margin: 0 auto;
         }
-        .footer-container{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            
-        }
-        .footer-column{
+        .columna-central {
             flex: 1;
-            text-align: left;
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-        #oferta-cartel {
-            position: static;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 130px;
-            height: 90px;
-            background-color: #3498db;
-            color: #fff;
-            text-align: left;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            margin: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        h1{
-            font-family: 'Anaktoria', sans-serif;
-            margin: 0;
-            margin-bottom: 20px; 
-        }
-        h2{
-            font-family: 'Anaktoria', sans-serif;
-            margin: 0;
-        }
-        .descuento {
-            font-size: 30px;
-            font-weight: bold;
-        }
-        .articulo {
-            border-bottom: 1px solid #000; /* 1px de grosor, color negro */
-            padding-bottom: 25px; /* Ajusta según sea necesario */
-            margin-bottom: 20px; /* Ajusta según sea necesario */
-        }
-
-        /*carrito*/
-        .carrito {
-            position: relative;
             padding: 10px;
-            align-items: center;
-            margin-left: 10px;
-            margin-bottom: 15px;
-
+            box-sizing: border-box;
+            border-left: 1px solid #000; /* 1px de grosor, color negro */
+            border-right: 1px solid #000; /* 1px de grosor, color negro */
         }
 
-        .carrito-icon {
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .carrito-resumen {
-            display: none;
-            position: fixed;
-            top: 10px; /* Ajusta la distancia desde la parte superior según tus necesidades */
-            right: 50px; /* Ajusta la distancia desde la derecha según tus necesidades */
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-
-        .comprar-btn {
-            margin-top: 10px;
-            margin-left: 5px;
-            background-color: #3498db;
-            color: #fff;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        #correo-input {
-            margin-top: 10px;
+        .imagen-sv {
             width: 90%;
-            padding: 5px;
+            height: auto;          
+        }
+        .imagen-hc {
+            width: 90%;
+            height: auto;          
         }
 
-    </style>
+        .texto-cadiz{
+            text-align: center;
+        }
+    </style>   
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1 class="titulo-cabecera">EL MANDALA</h1>
+            <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="index.html">EL MANDALA</a></h1>
             <a href="img/img1.jpg" target="_blank">
-                <img id="logo" src="img/img1.jpg" alt="Logo" width="100px" height="100px">
+                <img id="logo-header" src="img/img1.jpg" alt="logo" width="100px" height="100px">
             </a>
         </div>
         <div class="header-container-2">
@@ -327,7 +108,7 @@
                         <span class="search-icon" onclick="toggleSearch()">
                             &#128269; <!-- Lupa Unicode -->
                         </span>
-                        <input type="text" id="search-field" placeholder="Buscar en la página">
+                        <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
                     <li><a href="#">Productos y Servicios</a>
                         <ul>
                             <li><a href="#">Clases de Yoga</a></li>
@@ -349,13 +130,7 @@
                 </ul>
             </nav>
             <div class="carrito">
-                <span class="carrito-icon" onclick="toggleCarrito()">&#128722;</span>
-                <div class="carrito-resumen" id="carritoResumen">
-                    <!-- Contenido del carrito -->
-                    <div class="contenedor">
-                        <input type="text" id="correo-input" placeholder="Ingrese su correo">
-                        <button class="comprar-btn" onclick="realizarCompra()">Realizar compra</button>
-                    </div>
+                <a class="carrito-icon" href="carrito/carrito.html">&#128722;</a>
                 </div>
             </div>
         </div>
@@ -453,15 +228,13 @@
             <img src="img/horarios_clases.jpeg" alt="Horarios y clases" class="imagen-hc">
         </div>
 
-        <div>
+        <div class="articulo">
             <h1>Por qué en Cádiz</h1>
             <div class="texto-cadiz">
                 <p>La felicidad que hay en la población de Cádiz encuentra sus raíces en una amalgama de elementos que convergen para crear un entorno propicio para el bienestar.</p>
                 <p>El clima benevolente y los paisajes marítimos proporcionan un escenario idílico, fomentando un estilo de vida activo y al aire libre. Las ricas tradiciones culturales y la proximidad comunitaria generan un fuerte sentido de identidad y conexión entre los habitantes. La dieta mediterránea, abundante en la región, no solo contribuye a la salud física sino que también se asocia con un bienestar emocional.</p>
                 <p>La estabilidad económica, junto con la belleza arquitectónica e histórica, completa el cuadro, creando un ambiente donde la felicidad florece de manera natural en cada rincón de Cádiz.</p>    
             </div>
-
-
         </div>
     </div>
     <footer>
@@ -478,7 +251,7 @@
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <img id="logo" src="img/img1.jpg" alt="Logo" width="300px" height="300px">
+                <img id="logo" src="img/img1.jpg" alt="logo-footer" width="300px" height="300px">
             </div>
         </div>
     </footer>

@@ -1,0 +1,180 @@
+/*FUENTES*/
+@font-face {
+    font-family: 'Anaktoria';
+    src: url('fuentes/Anaktoria/Anaktoria.otf') format('opentype');
+}
+h1{
+    font-family: 'Anaktoria', sans-serif;
+    margin: 0;
+    margin-bottom: 20px; 
+}
+h2{
+    font-family: 'Anaktoria', sans-serif;
+    margin: 0;
+}
+
+/*BODY*/
+body {
+    max-width: 70%;
+    margin: 0 auto; /* Esto centrará el body en la página */
+    font-family: Arial, sans-serif;
+    background-image: url(img/fondo.jpeg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*header*/
+.titulo-cabecera{
+    font-size: 100px;
+    margin: 0;
+
+}
+
+.titulo-cabecera-interno{
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.header-container {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container-2 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#logo-header {
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+nav {
+    color: black;
+    padding: 10px;
+    text-align: center;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    border: 1px solid black;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
+    position: relative;
+    z-index: 1; /* Asegura que el nav esté arriba en la pila */
+    width: 250px;
+    display: flex; /* Hace que los elementos flexibles */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center;
+}
+nav ul li:hover ul {
+    display: block;
+    background-color: #fff;
+    z-index: 2; /* Asegura que el nav esté arriba en la pila */
+    padding: 0;
+    width: 250px;
+}
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    padding: 10px;
+    background-color: #fff;
+}
+nav ul ul li {
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+}
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+/*CUERPO*/
+.cuerpo{
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+
+/*CARRITO*/
+
+.carrito {
+    position: relative;
+    padding: 10px;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.carrito a {
+    text-decoration: none; /* Elimina la decoración subrayada */
+    color: black; /* Color del enlace */
+}
+
+.carrito-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/*FOOTER*/
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    
+}
+.footer-column{
+    display: inline-block;
+    text-align: left;
+}
+
+.articulo {
+    border-bottom: 1px solid #000; /* 1px de grosor, color negro */
+    padding-bottom: 25px; /* Ajusta según sea necesario */
+    margin-bottom: 20px; /* Ajusta según sea necesario */
+}
+
+.articulo:last-child {
+    border-bottom: none; /* Elimina la línea negra del último artículo */
+}
