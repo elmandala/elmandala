@@ -21,46 +21,77 @@
         ul li {
             margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
         }
+
+        .imagen-sv {
+            width: 90%;
+            height: auto;          
+        }
+        .imagen-sm {
+            width: 50%;
+            height: auto;          
+        }
+        .imagen-hc {
+            width: 90%;
+            height: auto;          
+        }
+        .imagen-lsmundo {
+            width: 90%;
+            height: auto;
+            margin-top: 20px;          
+        }
+        .contenedor {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
-            <a href="img/img1.jpg" target="_blank">
+            <a href="../img/img1.jpg" target="_blank">
                 <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
             </a>
         </div>
-        <div class="header-container-2">
-            <nav>
-                <ul>
-                    <li>
-                        <span class="search-icon" onclick="toggleSearch()">
-                            &#128269; <!-- Lupa Unicode -->
-                        </span>
-                        <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
-                    <li><a href="#">Productos y Servicios</a>
-                        <ul>
-                            <li><a href="#">Clases de Yoga</a></li>
-                            <li><a href="../productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
-                            <li><a href="../productos-servicios/te.html">Té</a></li>
-                            <li><a href="#">Incienso</a></li>
-                            <li><a href="#">Velas</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">+ Sobre Nosotros</a>
-                        <ul>
-                            <li><a href="#">Donde Estamos</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Contáctanos</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="carrito">
-                <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">
+            &#9776; <!-- Icono de hamburguesa Unicode -->
+        </div>
+        <div class="menu-lista" id="menu-lista">
+            <div class="header-container-2">
+                <nav>
+                    <ul>
+                        <li>
+                            <span class="search-icon" onclick="toggleSearch()">
+                                &#128269; <!-- Lupa Unicode -->
+                            </span>
+                            <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        <li><a href="#">Productos y Servicios</a>
+                            <ul>
+                                <li><a href="../productos-servicios/servicios.html">Servicios</a></li>
+                                <li><a href="../productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
+                                <li><a href="../productos-servicios/te.html">Té</a></li>
+                                <li><a href="#">Incienso</a></li>
+                                <li><a href="#">Velas</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">+ Sobre Nosotros</a>
+                            <ul>
+                                <li><a href="../sobre-nosotros/quienes-somos.html">Quienes Somos</a></li>
+                                <li><a href="../sobre-nosotros/donde-estamos.html">Donde Estamos</a></li>
+                                <li><a href="#">Eventos</a></li>
+                                <li><a href="#">Contáctanos</a></li>
+                                <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="carrito">
+                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,23 +129,79 @@
                 <li>Desarrollo de la Autoconciencia</li>
             </ul>
         </div>
-    </div>
+        
+        <div class="articulo">
+            <h1>San Valentín en El mandala</h1>
+            <div>
+                <div>
+                    <p>El yoga desempeña un papel notable en las relaciones románticas al ofrecer no solo beneficios físicos, sino también una profunda conexión emocional. La práctica regular de yoga fomenta la conciencia plena y la aceptación personal, creando individuos más equilibrados y seguros.</p>
+                    <p>En el contexto de las relaciones, esto se traduce en una mayor capacidad para comprender y apoyar a la pareja. La calma mental cultivada a través del yoga contribuye a manejar el estrés y las tensiones cotidianas, promoviendo un ambiente relajado y propicio para la comunicación efectiva. Además, las posturas compartidas y la sincronización respiratoria en las clases de yoga pueden fortalecer la conexión física y emocional entre los socios, creando un espacio compartido que va más allá de lo físico.</p>
+                    <p>En resumen, el yoga emerge como un catalizador que no solo mejora la salud individual, sino que también enriquece y fortalece las relaciones románticas al cultivar la empatía, la aceptación y la conexión profunda entre los compañeros.</p>    
+                </div>
+                <div class="contenedor">
+                    <div>
+                        <img src="../img/sv1.jpeg" alt="San valentín" class="imagen-sv">
+                    </div>
+                    <div>
+                        <img src="../img/sv2.jpeg" alt="San valentín" class="imagen-sv">
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="articulo">
+            <h2>Lámparas de sal por el mundo</h2>
+            <div class="texto-lsmundo">
+                <p>Las lámparas de sal son populares en todo el mundo y se han convertido en elementos de decoración y bienestar en muchos hogares. Principalmente, estas lámparas están hechas de cristales de sal del Himalaya, que se extraen de las minas en la región montañosa de Pakistán, cerca de la cordillera del Himalaya. Sin embargo, su presencia se ha extendido a nivel global, y se pueden encontrar en una variedad de formas y tamaños, adaptándose a diferentes estilos de decoración.</p>
+                <p>En los mercados occidentales, las lámparas de sal han ganado popularidad como elementos decorativos que aportan un toque rústico y natural a los espacios interiores. A menudo, se esculpen y pulen a mano para resaltar la singularidad de cada cristal de sal. Se presentan en diversas formas, desde bloques sólidos hasta estructuras talladas más intrincadas, y se colocan en bases de madera o en soportes de metal.</p>
+                <p>Estas lámparas no solo se utilizan por su atractivo visual, sino que también se promocionan por sus posibles beneficios para la salud. Se cree que emiten iones negativos cuando se calientan con una bombilla, contribuyendo así a mejorar la calidad del aire al neutralizar los iones positivos. Además, la luz suave y cálida que emiten se considera relajante y propicia para crear un ambiente acogedor.</p>
+                <p>En resumen, las lámparas de sal son un fenómeno global, desde su origen en las montañas del Himalaya hasta su difusión como elementos decorativos y de bienestar en hogares de todo el mundo.</p>    
+            </div>   
+            <div class="contenedor">
+                <div>
+                    <img src="../img/lsal_1.jpeg" alt="Lámpara de Sal" class="imagen-lsmundo">
+                </div>
+                <div>
+                    <img src="../img/lsal_2.jpeg" alt="Lámpara de Sal" class="imagen-lsmundo">
+                </div>
+                <div>
+                    <img src="../img/lsal_3.jpeg" alt="Lámpara de Sal" class="imagen-lsmundo">
+                </div>
+            </div>
+        </div>
+
+    </div>
     <footer>
         <div class="footer-container">
             <!-- Columna izquierda -->
             <div class="footer-column">
                 <h3>Contacto</h3>
-                <p>Gmail: ejemplo@gmail.com</p>
-                <p>Número: +123 456 789</p>
-                <p>Dirección: Calle Ejemplo, Ciudad</p>
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <div class="footer-iconos">
+                    <p>
+                        <a href="mailto:elmandalacadiz@gmail.com" target="_blank">
+                            <img class="footer-icono" src="../img/gmail_icono.png" alt="Correo" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:956833904">
+                            <img class="footer-icono" src="../img/llamada_icono.png" alt="Teléfono" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/elmandalacadiz/" target="_blank">
+                            <img class="footer-icono" src="../img/instagram_icono.png" alt="Instagram" width="30" height="30">
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.944949122676!2d-6.304966524293404!3d36.53132248281034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd15fc0c09083%3A0x65df1924b3d27b79!2sC.%20de%20la%20Rosa%2C%2011002%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1705958126027!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <img id="logo" src="../img/img1.jpg" alt="Logo" width="300px" height="300px">
+                <img id="logo-footer" src="../img/img1.jpg" alt="logo-footer" width="300px" height="300px">
             </div>
         </div>
     </footer>

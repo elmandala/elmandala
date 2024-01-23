@@ -6,14 +6,21 @@
     <link rel="icon" href="img/img1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="general.css">
     <script src="general.js"></script>
+    
+    <!-- Agrega los siguientes enlaces para incluir Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+             
+    <script src="js/carousel-slide.js"></script>
     <title>Inicio</title>
     <style>
         .titulo-sal{
             text-align: center;
-            font-size: 60px;
+            font-size: 50px;
         }
         .imagen-sal {
-            width: 65%;
+            width: 35%;
             height: auto;           
         }
 
@@ -77,20 +84,219 @@
             box-sizing: border-box;
             border-left: 1px solid #000; /* 1px de grosor, color negro */
             border-right: 1px solid #000; /* 1px de grosor, color negro */
+
         }
 
         .imagen-sv {
             width: 90%;
             height: auto;          
         }
-        .imagen-hc {
-            width: 90%;
+        .imagen-sm {
+            width: 50%;
             height: auto;          
         }
-
+        .video {
+            width: 60%;
+            height: auto; 
+            margin-top: 20px;         
+        }
         .texto-cadiz{
             text-align: center;
         }
+        /*Contenido del CAROUSEL (CONTROLES, INDICADORES Y COLUMNAS DE CONTENIDO)*/
+        .carousel{
+        position:relative;
+        width:55rem;
+        height: auto;
+        margin: 1rem;
+        padding-right:1rem;
+        padding-left:1rem;
+        margin-right:auto;
+        margin-left:auto;
+        }
+
+        /*LAS TRES FILAS DE CONTENIDO (DOS COLUMNAS SON TEXTO+BOTON E IMAGEN)*/
+        .carousel-inner{
+        position:relative;
+        overflow:hidden;
+        text-align: center;
+        }
+
+        /*FILA INDIVIDUAL (DOS COLUMNAS EN CADA FILA)*/
+        .carousel-item{
+        position:relative;
+        display:none;
+        align-items:center;
+        width:100%;
+        height: 15rem;
+        transition:-webkit-transform 3s ease;
+        transition:transform 3s ease;
+        transition:transform 3s ease,-webkit-transform 1s ease;
+        -webkit-backface-visibility:hidden;
+        backface-visibility:hidden;
+        perspective:1000px;
+        }
+
+        /*MODELADO INTERNO DE LA FILA INDIVIDUAL*/
+        .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        }
+
+        /*MODELADO DE LA COLUMNA TEXTO + BOTON*/
+        .col-texto{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        padding-top: 0.5rem;
+        width: 25rem;
+        height: 15rem;
+        background-color: #B3B3B3;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        }
+
+        /*COLOCACIÓN DEL TEXTO A LA IZQUIERDA DE LA COLUMNA*/
+        .col-texto p{
+        text-align: left;
+        }
+
+        /*MODELADO DE LAS MEDIDAS DE LA IMAGEN DEL CAROUSEL*/
+        .col img {
+        width: 30rem;
+        height: 15rem;
+        object-fit: cover;
+        margin: 0;
+        }
+
+        /*MODELADO DE LOS CONTROLES DEL CAROUSEL*/
+
+        .carousel-item-next,.carousel-item-prev,.carousel-item.active{
+        display:block;
+        }
+
+        .carousel-item-next,.carousel-item-prev{
+        position:absolute;
+        top:0;
+        }
+
+        .carousel-item-next.carousel-item-left,.carousel-item-prev.carousel-item-right{
+        transform:translateX(0);
+        }
+
+        .active.carousel-item-right,.carousel-item-next{
+        transform:translateX(100%);
+        }
+
+        .active.carousel-item-left,.carousel-item-prev{
+        transform:translateX(-100%);
+        }
+
+        /*POSICION DE LOS CONTROLADORES DE CAROUSEL*/
+        .carousel-control-next,.carousel-control-prev{
+        position:absolute;
+        top:0;
+        bottom:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width: 2rem;
+        height: 2rem;
+        color:#fff;
+        text-align:center;
+        opacity:.5;
+        }
+
+        .carousel-control-prev{
+        left: -2rem;
+        top: 6rem;
+        }
+        .carousel-control-next{
+        right:-2rem;
+        top: 6rem;
+        }
+
+        /*HOVER DE LOS CONTROLADORES DE CAROUSEL*/
+        .carousel-control-next:hover,.carousel-control-prev:hover{
+        opacity:.9;
+        
+        }
+
+
+        /*TAMAÑO DE LOS CONTROLADORES DEL CAROUSEL*/
+        .carousel-control-next-icon,.carousel-control-prev-icon{
+        width:2rem;
+        height:2rem;
+        }
+
+        /*MODELADO DE LOS INDICADORES*/
+        .carousel-indicators{
+        position:absolute;
+        right:0;
+        bottom: 10px;
+        left:4rem;
+        z-index:15;
+        display:flex;
+        justify-content:center;
+        padding-left:0;
+        margin-right:15%;
+        margin-left:15%;
+        list-style:none;
+        }
+        .carousel-indicators li{
+        position:relative;
+        flex:0 1 auto;
+        width:30px;
+        height:3px;
+        margin-right:3px;
+        margin-left:3px;
+        text-indent:-999px;
+        background-color:rgba(255,255,255,.5);
+        }
+        .carousel-indicators li::before{
+        position:absolute;
+        top:-10px;
+        left:0;
+        display:inline-block;
+        width:100%;
+        height:10px;
+        content:"";
+        }
+        .carousel-indicators li::after{
+        position:absolute;
+        bottom:-10px;
+        left:0;display:inline-block;
+        width:100%;
+        height:10px;
+        content:"";
+        }
+        .carousel-indicators .active{
+        background-color:#ffffff;
+        }
+        .carousel-caption{
+        position:absolute;
+        right:15%;
+        bottom:20px;
+        left:15%;
+        z-index:10;
+        padding-top:20px;
+        padding-bottom:20px;
+        color:#fff;
+        text-align:center;
+        }
+        .index-contenedor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        max-width: 90rem;
+        margin-left: 70px;
+        margin-right: 70px;
+        }
+
     </style>   
 </head>
 <body>
@@ -101,36 +307,42 @@
                 <img id="logo-header" src="img/img1.jpg" alt="logo" width="100px" height="100px">
             </a>
         </div>
-        <div class="header-container-2">
-            <nav>
-                <ul>
-                    <li>
-                        <span class="search-icon" onclick="toggleSearch()">
-                            &#128269; <!-- Lupa Unicode -->
-                        </span>
-                        <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
-                    <li><a href="#">Productos y Servicios</a>
-                        <ul>
-                            <li><a href="#">Clases de Yoga</a></li>
-                            <li><a href="productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
-                            <li><a href="productos-servicios/te.html">Té</a></li>
-                            <li><a href="#">Incienso</a></li>
-                            <li><a href="#">Velas</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">+ Sobre Nosotros</a>
-                        <ul>
-                            <li><a href="#">Donde Estamos</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Contáctanos</a></li>
-                            <li><a href="sobre-nosotros/blog.html">Blog</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="carrito">
-                <a class="carrito-icon" href="carrito/carrito.html">&#128722;</a>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">
+            &#9776; <!-- Icono de hamburguesa Unicode -->
+        </div>
+        <div class="menu-lista" id="menu-lista">
+            <div class="header-container-2">
+                <nav>
+                    <ul>
+                        <li>
+                            <span class="search-icon" onclick="toggleSearch()">
+                                &#128269; <!-- Lupa Unicode -->
+                            </span>
+                            <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        <li><a href="#">Productos y Servicios</a>
+                            <ul>
+                                <li><a href="productos-servicios/servicios.html">Servicios</a></li>
+                                <li><a href="productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
+                                <li><a href="productos-servicios/te.html">Té</a></li>
+                                <li><a href="#">Incienso</a></li>
+                                <li><a href="#">Velas</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">+ Sobre Nosotros</a>
+                            <ul>
+                                <li><a href="sobre-nosotros/quienes-somos.html">Quienes Somos</a></li>
+                                <li><a href="sobre-nosotros/donde-estamos.html">Donde Estamos</a></li>
+                                <li><a href="#">Eventos</a></li>
+                                <li><a href="#">Contáctanos</a></li>
+                                <li><a href="sobre-nosotros/blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="carrito">
+                    <a class="carrito-icon" href="carrito/carrito.html">&#128722;</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,15 +351,86 @@
     <div class="cuerpo">
         <div class="articulo">
             <h2 class="titulo-sal">LÁMPARA DE SAL</h2>
-            <img src="img/lsal_principal.jpeg" alt="Lámpara de Sal" class="imagen-sal">
-
+            <a href="productos-servicios/lampara_sal.html">
+                <img src="img/lsal_principal.jpeg" alt="Lámpara de Sal" class="imagen-sal">
+            </a>
+        </div>
+        <div class="articulo">
+            <h1>Servicios</h1>
+            <div class="container">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="productos-servicios/servicios.html">
+                                        <img class="tamaño_foto_carousel" src="img/yoga.jpeg" alt="Primera imagen">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="productos-servicios/servicios.html">
+                                        <img class="tamaño_foto_carousel" src="img/hipopresivo.jpeg" alt="Primera imagen">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="productos-servicios/servicios.html">
+                                        <img class="tamaño_foto_carousel" src="img/meditacion.jpeg" alt="Primera imagen">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="productos-servicios/servicios.html">
+                                        <img class="tamaño_foto_carousel" src="img/pilates.jpeg" alt="Primera imagen">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="productos-servicios/servicios.html">
+                                        <img class="tamaño_foto_carousel" src="img/prepartos.jpeg" alt="Primera imagen">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--CONTROLES DEL SLIDE IZQUIERDA/DERECHA-->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <img class="carousel-control-prev-icon" src="img/anterior.png" alt="Imagen anterior" aria-hidden="true"> <!--ANTERIOR-->
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <img class="carousel-control-next-icon" src="img/proximo.png" alt="Imagen posterior" aria-hidden="true"> <!--POSTERIOR-->
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h1>Blog</h1>
+        <div class="articulo">
             <h2>Lámparas de sal por el mundo</h2>
             <div class="texto-lsmundo">
                 <p>Las lámparas de sal son populares en todo el mundo y se han convertido en elementos de decoración y bienestar en muchos hogares. Principalmente, estas lámparas están hechas de cristales de sal del Himalaya, que se extraen de las minas en la región montañosa de Pakistán, cerca de la cordillera del Himalaya. Sin embargo, su presencia se ha extendido a nivel global, y se pueden encontrar en una variedad de formas y tamaños, adaptándose a diferentes estilos de decoración.</p>
-                <p>En los mercados occidentales, las lámparas de sal han ganado popularidad como elementos decorativos que aportan un toque rústico y natural a los espacios interiores. A menudo, se esculpen y pulen a mano para resaltar la singularidad de cada cristal de sal. Se presentan en diversas formas, desde bloques sólidos hasta estructuras talladas más intrincadas, y se colocan en bases de madera o en soportes de metal.</p>
-                <p>Estas lámparas no solo se utilizan por su atractivo visual, sino que también se promocionan por sus posibles beneficios para la salud. Se cree que emiten iones negativos cuando se calientan con una bombilla, contribuyendo así a mejorar la calidad del aire al neutralizar los iones positivos. Además, la luz suave y cálida que emiten se considera relajante y propicia para crear un ambiente acogedor.</p>
-                <p>En resumen, las lámparas de sal son un fenómeno global, desde su origen en las montañas del Himalaya hasta su difusión como elementos decorativos y de bienestar en hogares de todo el mundo.</p>    
-            </div>   
+                </div>   
             <div class="contenedor">
                 <div>
                     <img src="img/lsal_1.jpeg" alt="Lámpara de Sal" class="imagen-lsmundo">
@@ -162,12 +445,16 @@
         </div>
 
         <div class="articulo">
-            <h2 class="titulo-mandala ">¿Qué es el mandala?</h2>
-            <br>
-            <div class="texto-mandala">
-                <p>Bienvenidos a nuestro “oasis de serenidad”, un centro de meditación que fusiona la esencia científica. Exploramos el mundo de elementos considerados “míticos” desde una perspectiva fundamentada en la ciencia y la salud mental.</p>
-                <p>En nuestro centro descubrirás la armonía entre el cuerpo y la mente, ofreciendo un refugio para aquellos que buscan paz interior. Desde velas aromáticas hasta palo santo y lámparas de sal, cada elemento seleccionado tiene un impacto positivo en el bienestar mental.</p>
-                <p>En nuestro centro, la relajación se convierte en una experiencia educativa, donde la ciencia y la espiritualidad convergen para nutrir tu bienestar integral. Únete a nosotros en este viaje hacia la paz interior y descubre el equilibrio entre la mente y el espíritu de una manera completamente nueva.</p>    
+            <h1>¿Por qué en el mandala estamos tan concienciados con la salud mental?</h1>
+            <div>
+                <div>
+                    <p>Prevalencia de trastornos mentales: Se estima que alrededor del 9-10% de la población española padece algún tipo de trastorno mental en un año dado, según datos de la Organización Mundial de la Salud (OMS).</p>
+                </div>
+                <div class="contenedor">
+                    <div>
+                        <img src="" alt="Salud mental" class="imagen-sm">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -209,9 +496,7 @@
             <div>
                 <div>
                     <p>El yoga desempeña un papel notable en las relaciones románticas al ofrecer no solo beneficios físicos, sino también una profunda conexión emocional. La práctica regular de yoga fomenta la conciencia plena y la aceptación personal, creando individuos más equilibrados y seguros.</p>
-                    <p>En el contexto de las relaciones, esto se traduce en una mayor capacidad para comprender y apoyar a la pareja. La calma mental cultivada a través del yoga contribuye a manejar el estrés y las tensiones cotidianas, promoviendo un ambiente relajado y propicio para la comunicación efectiva. Además, las posturas compartidas y la sincronización respiratoria en las clases de yoga pueden fortalecer la conexión física y emocional entre los socios, creando un espacio compartido que va más allá de lo físico.</p>
-                    <p>En resumen, el yoga emerge como un catalizador que no solo mejora la salud individual, sino que también enriquece y fortalece las relaciones románticas al cultivar la empatía, la aceptación y la conexión profunda entre los compañeros.</p>    
-                </div>
+                    </div>
                 <div class="contenedor">
                     <div>
                         <img src="img/sv1.jpeg" alt="San valentín" class="imagen-sv">
@@ -222,19 +507,11 @@
                 </div>
             </div>
         </div>
-
         <div class="articulo">
-            <h1>Horarios y Clases</h1>
-            <img src="img/horarios_clases.jpeg" alt="Horarios y clases" class="imagen-hc">
-        </div>
-
-        <div class="articulo">
-            <h1>Por qué en Cádiz</h1>
-            <div class="texto-cadiz">
-                <p>La felicidad que hay en la población de Cádiz encuentra sus raíces en una amalgama de elementos que convergen para crear un entorno propicio para el bienestar.</p>
-                <p>El clima benevolente y los paisajes marítimos proporcionan un escenario idílico, fomentando un estilo de vida activo y al aire libre. Las ricas tradiciones culturales y la proximidad comunitaria generan un fuerte sentido de identidad y conexión entre los habitantes. La dieta mediterránea, abundante en la región, no solo contribuye a la salud física sino que también se asocia con un bienestar emocional.</p>
-                <p>La estabilidad económica, junto con la belleza arquitectónica e histórica, completa el cuadro, creando un ambiente donde la felicidad florece de manera natural en cada rincón de Cádiz.</p>    
-            </div>
+            <video class="video" controls>
+                <source src="videos/elmandala.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
         </div>
     </div>
     <footer>
@@ -242,16 +519,32 @@
             <!-- Columna izquierda -->
             <div class="footer-column">
                 <h3>Contacto</h3>
-                <p>Gmail: ejemplo@gmail.com</p>
-                <p>Número: +123 456 789</p>
-                <p>Dirección: Calle Ejemplo, Ciudad</p>
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <div class="footer-iconos">
+                    <p>
+                        <a href="mailto:elmandalacadiz@gmail.com" target="_blank">
+                            <img class="footer-icono" src="img/gmail_icono.png" alt="Correo" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:956833904">
+                            <img class="footer-icono" src="img/llamada_icono.png" alt="Teléfono" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/elmandalacadiz/" target="_blank">
+                            <img class="footer-icono" src="img/instagram_icono.png" alt="Instagram" width="30" height="30">
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.944949122676!2d-6.304966524293404!3d36.53132248281034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd15fc0c09083%3A0x65df1924b3d27b79!2sC.%20de%20la%20Rosa%2C%2011002%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1705958126027!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <img id="logo" src="img/img1.jpg" alt="logo-footer" width="300px" height="300px">
+                <img id="logo-footer" src="img/img1.jpg" alt="logo-footer" width="300px" height="300px">
             </div>
         </div>
     </footer>
@@ -289,6 +582,18 @@
 
     </script>
     
+    <script>
+        // Función para mostrar/ocultar el menú de hamburguesa en dispositivos móviles
+        function toggleMenu() {
+            var menu = document.getElementById("menu-lista");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+    </script>
 
 </body>
 </html>

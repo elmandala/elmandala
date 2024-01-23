@@ -6,77 +6,210 @@
     <link rel="icon" href="../img/img1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="../general.css">
     <script src="../general.js"></script>
+    <script src="../carrito/script.js"></script>
     <title>Lámpara de sal</title>
+    <style>
+        .imagen-sal {
+            width: 35%;
+            height: auto;           
+        }
+
+        .imagen-sal {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px; /* Espacio entre la imagen y el texto/botón */
+        }
+
+        .detalles {
+            text-align: center;
+        }
+
+        .precio {
+            font-size: 1.2em;
+            margin-bottom: 10px; /* Espacio entre el precio y el botón */
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .contenedor {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+        }
+
+        .contenedor-central {
+            border: 2px solid black; /* Fondo negro */
+            padding: 20px; /* Espacio alrededor del contenido */
+            text-align: center; /* Centrar el contenido */
+            margin-top: 20px; /* Espacio arriba del contenedor */
+            margin-bottom: 20px; /* Espacio abajo del contenedor */
+        }
+        .lampara-sal-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .lampara-sal-image {
+            width: 45%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .informacion-lampara {
+            width: 45%;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .informacion-lampara h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .informacion-lampara p {
+            margin: 5px 0;
+        }
+
+        .informacion-lampara button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .informacion-lampara button:hover {
+            background-color: #45a049;
+        }
+        h3{
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
-            <a href="img/img1.jpg" target="_blank">
+            <a href="../img/img1.jpg" target="_blank">
                 <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
             </a>
         </div>
-        <div class="header-container-2">
-            <nav>
-                <ul>
-                    <li>
-                        <span class="search-icon" onclick="toggleSearch()">
-                            &#128269; <!-- Lupa Unicode -->
-                        </span>
-                        <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
-                    <li><a href="#">Productos y Servicios</a>
-                        <ul>
-                            <li><a href="#">Clases de Yoga</a></li>
-                            <li><a href="lampara_sal.html">Lámpara de Sal</a></li>
-                            <li><a href="te.html">Té</a></li>
-                            <li><a href="#">Incienso</a></li>
-                            <li><a href="#">Velas</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">+ Sobre Nosotros</a>
-                        <ul>
-                            <li><a href="#">Donde Estamos</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Contáctanos</a></li>
-                            <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="carrito">
-                <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">
+            &#9776; <!-- Icono de hamburguesa Unicode -->
+        </div>
+        <div class="menu-lista" id="menu-lista">
+            <div class="header-container-2">
+                <nav>
+                    <ul>
+                        <li>
+                            <span class="search-icon" onclick="toggleSearch()">
+                                &#128269; <!-- Lupa Unicode -->
+                            </span>
+                            <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        <li><a href="#">Productos y Servicios</a>
+                            <ul>
+                                <li><a href="../productos-servicios/servicios.html">Servicios</a></li>
+                                <li><a href="../productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
+                                <li><a href="../productos-servicios/te.html">Té</a></li>
+                                <li><a href="#">Incienso</a></li>
+                                <li><a href="#">Velas</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">+ Sobre Nosotros</a>
+                            <ul>
+                                <li><a href="../sobre-nosotros/quienes-somos.html">Quienes Somos</a></li>
+                                <li><a href="../sobre-nosotros/donde-estamos.html">Donde Estamos</a></li>
+                                <li><a href="#">Eventos</a></li>
+                                <li><a href="#">Contáctanos</a></li>
+                                <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="carrito">
+                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </header>
 
     <div class="cuerpo">
         <h1>Lámpara de Sal</h1>
         <div class="articulo">
+            <div class="contenedor-central">
+                <div class="lampara-sal-container">
+                    <!-- Imagen a la izquierda -->
+                    <div class="lampara-sal-image">
+                        <img src="../img/lsal.jpeg" alt="Lámpara de Sal" class="imagen-sal">
+                    </div>
+                    <!-- Bloque de información a la derecha -->
+                    <div class="informacion-lampara">
+                        <h3>Lámpara de sal</h3>
+                        <p>Descripción de la lámpara de sal.</p>
+                        <p>Peso: 4-5 kg</p>
+                        <p>Medidas: 25 cm alto</p>
+                        <p>Precio: 5.00€</p>
+                        <button onclick="agregarAlCarrito('Lámpara de sal', '../img/lsal.jpeg', 5)">Añadir a la cesta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="articulo">
+            <h2>Descripción completa</h2>
             <p>Comprar una lámpara de sal no solo es adquirir un objeto decorativo, sino una inversión en bienestar. Estas lámparas, talladas a mano a partir de cristales de sal del Himalaya, emiten una suave luz que crea una atmósfera cálida y relajante en cualquier espacio.</p>
             <p>Además de su atractivo estético, las lámparas de sal son conocidas por sus posibles beneficios para la salud, ya que se cree que liberan iones negativos que purifican el aire y pueden mejorar la calidad del sueño.</p>
             <p>Este elemento natural no solo agrega un toque distintivo a la decoración, sino que también contribuye a un ambiente más tranquilo y equilibrado, convirtiéndose en una adición armoniosa para el hogar o espacio de trabajo.</p>
             <p>En última instancia, comprar una lámpara de sal no solo es una decisión estilística, sino una elección consciente en favor de un ambiente más saludable y relajante.</p>    
+            <p>Innovador control ajustable, puedes personalizar la intensidad de la luz según el ambiente que desees crear. Desde una luz tenue y relajante hasta una iluminación más brillante, tú tienes el control total.</p>
+            <img src="../img/lsal_conector.jpeg" alt="Lámpara de Sal" class="imagen-sal">
         </div>
       </div>
-    
-    <footer>
+      <footer>
         <div class="footer-container">
             <!-- Columna izquierda -->
             <div class="footer-column">
                 <h3>Contacto</h3>
-                <p>Gmail: ejemplo@gmail.com</p>
-                <p>Número: +123 456 789</p>
-                <p>Dirección: Calle Ejemplo, Ciudad</p>
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <div class="footer-iconos">
+                    <p>
+                        <a href="mailto:elmandalacadiz@gmail.com" target="_blank">
+                            <img class="footer-icono" src="../img/gmail_icono.png" alt="Correo" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:956833904">
+                            <img class="footer-icono" src="../img/llamada_icono.png" alt="Teléfono" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/elmandalacadiz/" target="_blank">
+                            <img class="footer-icono" src="../img/instagram_icono.png" alt="Instagram" width="30" height="30">
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.944949122676!2d-6.304966524293404!3d36.53132248281034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd15fc0c09083%3A0x65df1924b3d27b79!2sC.%20de%20la%20Rosa%2C%2011002%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1705958126027!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <img id="logo" src="../img/img1.jpg" alt="Logo" width="300px" height="300px">
+                <img id="logo-footer" src="../img/img1.jpg" alt="logo-footer" width="300px" height="300px">
             </div>
         </div>
     </footer>

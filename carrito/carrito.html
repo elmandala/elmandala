@@ -14,44 +14,49 @@
     <header>
         <div class="header-container">
             <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
-            <a href="img/img1.jpg" target="_blank">
+            <a href="../img/img1.jpg" target="_blank">
                 <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
             </a>
         </div>
-        <div class="header-container-2">
-            <nav>
-                <ul>
-                    <li>
-                        <span class="search-icon" onclick="toggleSearch()">
-                            &#128269; <!-- Lupa Unicode -->
-                        </span>
-                        <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
-                    <li><a href="#">Productos y Servicios</a>
-                        <ul>
-                            <li><a href="#">Clases de Yoga</a></li>
-                            <li><a href="../productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
-                            <li><a href="../productos-servicios/te.html">Té</a></li>
-                            <li><a href="#">Incienso</a></li>
-                            <li><a href="#">Velas</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">+ Sobre Nosotros</a>
-                        <ul>
-                            <li><a href="#">Donde Estamos</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Contáctanos</a></li>
-                            <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="carrito">
-                <a class="carrito-icon"  onclick="volverPagina()">&#128722;</a>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">
+            &#9776; <!-- Icono de hamburguesa Unicode -->
+        </div>
+        <div class="menu-lista" id="menu-lista">
+            <div class="header-container-2">
+                <nav>
+                    <ul>
+                        <li>
+                            <span class="search-icon" onclick="toggleSearch()">
+                                &#128269; <!-- Lupa Unicode -->
+                            </span>
+                            <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        <li><a href="#">Productos y Servicios</a>
+                            <ul>
+                                <li><a href="../productos-servicios/servicios.html">Servicios</a></li>
+                                <li><a href="../productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
+                                <li><a href="../productos-servicios/te.html">Té</a></li>
+                                <li><a href="#">Incienso</a></li>
+                                <li><a href="#">Velas</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">+ Sobre Nosotros</a>
+                            <ul>
+                                <li><a href="../sobre-nosotros/quienes-somos.html">Quienes Somos</a></li>
+                                <li><a href="../sobre-nosotros/donde-estamos.html">Donde Estamos</a></li>
+                                <li><a href="#">Eventos</a></li>
+                                <li><a href="#">Contáctanos</a></li>
+                                <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="carrito">
+                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </header>
     <div class="cuerpo">
         <section id="cesta" class="cesta-titulo">
@@ -160,16 +165,32 @@
             <!-- Columna izquierda -->
             <div class="footer-column">
                 <h3>Contacto</h3>
-                <p>Gmail: ejemplo@gmail.com</p>
-                <p>Número: +123 456 789</p>
-                <p>Dirección: Calle Ejemplo, Ciudad</p>
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <div class="footer-iconos">
+                    <p>
+                        <a href="mailto:elmandalacadiz@gmail.com" target="_blank">
+                            <img class="footer-icono" src="../img/gmail_icono.png" alt="Correo" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:956833904">
+                            <img class="footer-icono" src="../img/llamada_icono.png" alt="Teléfono" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/elmandalacadiz/" target="_blank">
+                            <img class="footer-icono" src="../img/instagram_icono.png" alt="Instagram" width="30" height="30">
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.944949122676!2d-6.304966524293404!3d36.53132248281034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd15fc0c09083%3A0x65df1924b3d27b79!2sC.%20de%20la%20Rosa%2C%2011002%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1705958126027!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <img id="logo" src="../img/img1.jpg" alt="logo-footer" width="300px" height="300px">
+                <img id="logo-footer" src="../img/img1.jpg" alt="logo-footer" width="300px" height="300px">
             </div>
         </div>
     </footer>

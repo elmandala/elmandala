@@ -1,180 +1,287 @@
 /*FUENTES*/
 @font-face {
-    font-family: 'Anaktoria';
-    src: url('fuentes/Anaktoria/Anaktoria.otf') format('opentype');
+font-family: 'Anaktoria';
+src: url('fuentes/Anaktoria/Anaktoria.otf') format('opentype');
 }
 h1{
-    font-family: 'Anaktoria', sans-serif;
-    margin: 0;
-    margin-bottom: 20px; 
+font-family: 'Anaktoria', sans-serif;
+margin: 0;
+margin-bottom: 20px; 
 }
 h2{
-    font-family: 'Anaktoria', sans-serif;
-    margin: 0;
+font-family: 'Anaktoria', sans-serif;
+margin: 0;
 }
 
 /*BODY*/
 body {
-    max-width: 70%;
-    margin: 0 auto; /* Esto centrará el body en la página */
-    font-family: Arial, sans-serif;
-    background-image: url(img/fondo.jpeg);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+max-width: 70%;
+margin: 0 auto; /* Esto centrará el body en la página */
+font-family: Arial, sans-serif;
+background-image: url(img/fondo.jpeg);
+background-size: cover;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 /*header*/
 .titulo-cabecera{
-    font-size: 100px;
-    margin: 0;
+font-size: 100px;
+margin: 0;
+position: relative; /* Ensure the header is positioned relative to its dropdowns */
+z-index: 1000; /* High z-index to ensure it's above other content */
 
 }
 
 .titulo-cabecera-interno{
-    text-decoration: none;
-    color: black;
+text-decoration: none;
+color: black;
 }
 
 header {
-    width: 100%;
-    text-align: center;
-    padding-bottom: 30px;
-    position: relative;
+width: 100%;
+text-align: center;
+padding-bottom: 30px;
+position: relative;
+z-index: 2; /* Asegura que el header esté arriba en la pila */
 }
 
 .header-container {
-    list-style: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+list-style: none;
+margin-top: 10px;
+margin-bottom: 10px;
+padding: 0;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
 }
 
 .header-container-2 {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+
 }
 
-
 #logo-header {
-    margin-left: 20px;
-    margin-bottom: 0;
+margin-left: 20px;
+margin-bottom: 0;
 }
 
 nav {
-    color: black;
-    padding: 10px;
-    text-align: center;
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
+color: black;
+padding: 10px;
+text-align: center;
+width: 100%; /* Ocupa todo el ancho de la pantalla */
+overflow: visible; /* Change from 'hidden' or 'auto' if set */
 }
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: center;
 }
 nav ul li {
-    border: 1px solid black;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
-    position: relative;
-    z-index: 1; /* Asegura que el nav esté arriba en la pila */
-    width: 250px;
-    display: flex; /* Hace que los elementos flexibles */
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: center;
+position: relative; /* This will be the anchor point for the absolute positioning of the dropdown */
+border: 1px solid black;
+padding: 5px;
+padding-left: 10px;
+padding-right: 10px;
+margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
+width: 250px;
+display: flex; /* Hace que los elementos flexibles */
+align-items: center; /* Centra verticalmente los elementos */
+justify-content: center;
+z-index: 1000; /* High z-index to ensure dropdowns are above other content */
 }
 nav ul li:hover ul {
-    display: block;
-    background-color: #fff;
-    z-index: 2; /* Asegura que el nav esté arriba en la pila */
-    padding: 0;
-    width: 250px;
+display: block;
+background-color: #fff;
+z-index: 2; /* Asegura que el nav esté arriba en la pila */
+padding: 0;
+width: 250px;
 }
 nav ul ul {
-    display: none;
     position: absolute;
-    top: 100%;
-    left: -1px;
-    padding: 10px;
-    background-color: #fff;
+    top: 100%; /* This positions the dropdown right below the parent li */
+    left: 0; /* Aligns the dropdown with the left edge of the parent li */
+    display: none; /* Hides the dropdown initially */
+    background-color: #fff; /* Optional: sets a background color for the dropdown */
+    z-index: 1000; /* Ensures the dropdown is on top of other elements */
+    width: auto; /* Optional: sets the width of the dropdown */
 }
 nav ul ul li {
-    background-color: #fff;
-    width: 100%;
-    text-align: center;
+background-color: #fff;
+width: 100%;
+text-align: center;
+position: relative;
 }
 nav ul li a {
-    color: black;
-    text-decoration: none;
+color: black;
+text-decoration: none;
 }
+
 
 /*CUERPO*/
 .cuerpo{
-    background-color: #fff;
-    width: 100%;
-    text-align: center;
-    padding: 30px;
-    position: relative;
+background-color: #fff;
+width: 100%;
+text-align: center;
+padding: 30px;
+position: relative;
 }
 
 /*CARRITO*/
 
 .carrito {
-    position: relative;
-    padding: 10px;
-    align-items: center;
-    margin-left: 10px;
-    margin-bottom: 15px;
+position: relative;
+padding: 10px;
+align-items: center;
+margin-left: 10px;
+margin-bottom: 15px;
 }
 
 .carrito a {
-    text-decoration: none; /* Elimina la decoración subrayada */
-    color: black; /* Color del enlace */
+text-decoration: none; /* Elimina la decoración subrayada */
+color: black; /* Color del enlace */
 }
 
 .carrito-icon {
-    font-size: 30px;
-    cursor: pointer;
+font-size: 30px;
+cursor: pointer;
 }
 
 /*FOOTER*/
 footer {
-    width: 100%;
-    text-align: center;
-    padding: 30px;
-    position: relative;
+width: 100%;
+text-align: center;
+padding: 30px;
+position: relative;
 }
 .footer-container{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+
+}
+.footer-column{
+display: inline-block;
+text-align: left;
+}
+.footer-iconos{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    
 }
-.footer-column{
-    display: inline-block;
-    text-align: left;
+.footer-icono{
+    margin-left: 10px;
+    margin-right: 10px;
 }
-
 .articulo {
-    border-bottom: 1px solid #000; /* 1px de grosor, color negro */
-    padding-bottom: 25px; /* Ajusta según sea necesario */
-    margin-bottom: 20px; /* Ajusta según sea necesario */
+border-bottom: 1px solid #000; /* 1px de grosor, color negro */
+padding-bottom: 25px; /* Ajusta según sea necesario */
+margin-bottom: 20px; /* Ajusta según sea necesario */
+
 }
 
 .articulo:last-child {
-    border-bottom: none; /* Elimina la línea negra del último artículo */
+border-bottom: none; /* Elimina la línea negra del último artículo */
+}
+
+
+/* Agrega estilos para el menú de hamburguesa */
+.menu-hamburguesa {
+display: none;
+cursor: pointer;
+font-size: 20px; /* Tamaño del icono */
+}
+
+/* Estilos adicionales para la versión móvil */
+@media screen and (max-width: 750px) {
+    body {
+        max-width: 80%;
+    }
+
+    /*header*/
+    .titulo-cabecera{
+        font-size: 50px;
+        margin: 0;
+    }
+    .titulo-cabecera-interno{
+        text-decoration: none;
+        color: black;
+    }
+    header {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .header-container {
+        position: relative;
+        list-style: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    #logo-header {
+        margin-left: 20px;
+        margin-bottom: 0;
+        width: 50px; /* Tamaño deseado */
+        height: auto;
+        align-self: flex-start; /* Alinea la imagen en la parte superior del contenedor */
+    }
+    .menu-lista {
+        display: none;
+    }
+    .menu-hamburguesa {
+        display: flex;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 30px; /* Tamaño del icono */
+        align-self: flex-start; /* Alinea el bloque en la parte superior */
+    }
+    .menu-hamburguesa a {
+        display: block;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+    }
+    .menu-hamburguesa-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 160px;
+        z-index: 1;
+    }
+    .menu-hamburguesa-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    .menu-hamburguesa:hover .menu-hamburguesa-content {
+        display: block;
+    }
+}
+@media screen and (min-width: 751px) {
+    .menu-lista {
+        display: flex !important;
+        justify-content: center;
+    }
 }

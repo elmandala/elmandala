@@ -6,67 +6,166 @@
     <link rel="icon" href="../img/img1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="../general.css">
     <script src="../general.js"></script>
+    <script src="../carrito/script.js"></script>
     <title>Té</title>
     <style>
         .imagen-te {
-            width: 50%;
+            width: 35%;
             height: auto;           
         }
+        .detalles {
+            text-align: center;
+        }
+
+        .precio {
+            font-size: 1.2em;
+            margin-bottom: 10px; /* Espacio entre el precio y el botón */
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        #productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .producto {
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin: 1em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            width: 30%; /* Ajusta el ancho de cada producto según tu preferencia */
+            box-sizing: border-box; /* Asegura que el ancho incluya el padding y el borde */
+        }
+
+        .producto img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 10px;
+        }
+
+        .producto button {
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
-            <a href="img/img1.jpg" target="_blank">
+            <a href="../img/img1.jpg" target="_blank">
                 <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
             </a>
         </div>
-        <div class="header-container-2">
-            <nav>
-                <ul>
-                    <li>
-                        <span class="search-icon" onclick="toggleSearch()">
-                            &#128269; <!-- Lupa Unicode -->
-                        </span>
-                        <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
-                    <li><a href="#">Productos y Servicios</a>
-                        <ul>
-                            <li><a href="#">Clases de Yoga</a></li>
-                            <li><a href="lampara_sal.html">Lámpara de Sal</a></li>
-                            <li><a href="te.html">Té</a></li>
-                            <li><a href="#">Incienso</a></li>
-                            <li><a href="#">Velas</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">+ Sobre Nosotros</a>
-                        <ul>
-                            <li><a href="#">Donde Estamos</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Contáctanos</a></li>
-                            <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="carrito">
-                <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">
+            &#9776; <!-- Icono de hamburguesa Unicode -->
+        </div>
+        <div class="menu-lista" id="menu-lista">
+            <div class="header-container-2">
+                <nav>
+                    <ul>
+                        <li>
+                            <span class="search-icon" onclick="toggleSearch()">
+                                &#128269; <!-- Lupa Unicode -->
+                            </span>
+                            <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        <li><a href="#">Productos y Servicios</a>
+                            <ul>
+                                <li><a href="../productos-servicios/servicios.html">Servicios</a></li>
+                                <li><a href="../productos-servicios/lampara_sal.html">Lámpara de Sal</a></li>
+                                <li><a href="../productos-servicios/te.html">Té</a></li>
+                                <li><a href="#">Incienso</a></li>
+                                <li><a href="#">Velas</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">+ Sobre Nosotros</a>
+                            <ul>
+                                <li><a href="../sobre-nosotros/quienes-somos.html">Quienes Somos</a></li>
+                                <li><a href="../sobre-nosotros/donde-estamos.html">Donde Estamos</a></li>
+                                <li><a href="#">Eventos</a></li>
+                                <li><a href="#">Contáctanos</a></li>
+                                <li><a href="../sobre-nosotros/blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="carrito">
+                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </header>
 
     <div class="cuerpo">
         <h1>Té</h1>
         <div class="articulo">
             <img src="../img/te.jpeg" alt="Té" class="imagen-te">
+        </div>
+        <div class="articulo">
+            <h2>VENTA</h2>
+        <section id="productos">
+            <div class="producto">
+                <div>
+                    <img src="../img/te1.jpeg" alt="t1">
+                </div>
+                <p>Té Blanco</p>
+                <button onclick="agregarAlCarrito('Té Blanco', '../img/te1.jpeg', 10)">Añadir a la cesta</button>
+            </div>
+            <div class="producto">
+                <div>
+                    <img src="../img/te2.jpeg" alt="t2">
+                </div>
+                <p>Té Pu-erh</p>
+                <button onclick="agregarAlCarrito('Té Pu-erh', '../img/te2.jpeg', 10)">Añadir a la cesta</button>
+            </div>
+            <div class="producto">
+                <div>
+                    <img src="../img/te3.jpeg" alt="t3">
+                </div>
+                <p>Té Oolong</p>
+                <button onclick="agregarAlCarrito('Té Oolong', '../img/te3.jpeg', 10)">Añadir a la cesta</button>
+            </div>
+            <div class="producto">
+                <div>
+                    <img src="../img/te4.jpeg" alt="t4">
+                </div>
+                <p>Té Negro</p>
+                <button onclick="agregarAlCarrito('Té Negro', '../img/te4.jpeg', 10)">Añadir a la cesta</button>
+            </div>
+            <div class="producto">
+                <div>
+                    <img src="../img/te5.jpeg" alt="t5">
+                </div>
+                <p>Té Verde</p>
+                <button onclick="agregarAlCarrito('Té Verde', '../img/te5.jpeg', 10)">Añadir a la cesta</button>
+            </div>
+            <div class="producto">
+                <div>
+                    <img src="../img/te6.jpeg" alt="t6">
+                </div>
+                <p>Té de Hierbas</p>
+                <button onclick="agregarAlCarrito('Té de Hierbas', '../img/te6.jpeg', 10)">Añadir a la cesta</button>
+            </div>
+        </section>
+        </div>
+        <div class="articulo">
             <p>Optar por comprar té no es simplemente una elección culinaria, sino una decisión que promueve el bienestar integral. Las distintas variedades de té no solo ofrecen una experiencia sensorial única, sino que también aportan numerosos beneficios para la salud.</p>
             <p>Desde las propiedades antioxidantes hasta las infusiones que promueven la relajación y mejoran la digestión, el té se convierte en una opción versátil y beneficiosa.</p>
             <p>Además de su riqueza en sabores y aromas, el té puede convertirse en un ritual diario que proporciona un momento de calma y reflexión, promoviendo así la salud mental.</p>
             <p>Al elegir comprar té, no solo se está seleccionando una bebida, sino también un hábito que puede contribuir a una vida más equilibrada y saludable, transformando la pausa para el té en un momento de cuidado personal y disfrute consciente.</p>  
-        </div>  
+        </div>
     </div>
     
     <footer>
@@ -74,16 +173,32 @@
             <!-- Columna izquierda -->
             <div class="footer-column">
                 <h3>Contacto</h3>
-                <p>Gmail: ejemplo@gmail.com</p>
-                <p>Número: +123 456 789</p>
-                <p>Dirección: Calle Ejemplo, Ciudad</p>
-                <h3>Trabaja con Nosotros</h3>
-                <p>¡Únete a nuestro equipo!</p>
+                <div class="footer-iconos">
+                    <p>
+                        <a href="mailto:elmandalacadiz@gmail.com" target="_blank">
+                            <img class="footer-icono" src="../img/gmail_icono.png" alt="Correo" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:956833904">
+                            <img class="footer-icono" src="../img/llamada_icono.png" alt="Teléfono" width="30" height="30">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/elmandalacadiz/" target="_blank">
+                            <img class="footer-icono" src="../img/instagram_icono.png" alt="Instagram" width="30" height="30">
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.944949122676!2d-6.304966524293404!3d36.53132248281034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd15fc0c09083%3A0x65df1924b3d27b79!2sC.%20de%20la%20Rosa%2C%2011002%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1705958126027!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             
             <!-- Columna derecha -->
             <div class="footer-column">
-                <img id="logo" src="../img/img1.jpg" alt="Logo" width="300px" height="300px">
+                <img id="logo-footer" src="../img/img1.jpg" alt="logo-footer" width="300px" height="300px">
             </div>
         </div>
     </footer>
