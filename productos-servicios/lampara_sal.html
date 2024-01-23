@@ -97,18 +97,36 @@
         h3{
             margin-top: 0;
         }
+        /* Estilos adicionales para la versión móvil */
+        @media screen and (max-width: 750px) {
+            .lampara-sal-container{
+                flex-direction: column;
+            }
+            .informacion-lampara{
+                width: 100%;
+            }
+            .imagen-sal{
+                width: 80%;
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
-            <a href="../img/img1.jpg" target="_blank">
-                <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
-            </a>
-        </div>
-        <div class="menu-hamburguesa" onclick="toggleMenu()">
-            &#9776; <!-- Icono de hamburguesa Unicode -->
+            <div class="header-container">
+                <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
+                <a href="../img/img1.jpg" target="_blank">
+                    <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
+                </a>
+            </div>
+            <div class="carrito-movil">
+                <div class="carrito">
+                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="menu-lista" id="menu-lista">
             <div class="header-container-2">
@@ -119,6 +137,7 @@
                                 &#128269; <!-- Lupa Unicode -->
                             </span>
                             <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        </li>
                         <li><a href="#">Productos y Servicios</a>
                             <ul>
                                 <li><a href="../productos-servicios/servicios.html">Servicios</a></li>
@@ -140,8 +159,10 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="carrito">
-                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                <div class="carrito-ordenador">
+                    <div class="carrito">
+                        <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,17 +181,16 @@
                     <!-- Bloque de información a la derecha -->
                     <div class="informacion-lampara">
                         <h3>Lámpara de sal</h3>
-                        <p>Descripción de la lámpara de sal.</p>
                         <p>Peso: 4-5 kg</p>
                         <p>Medidas: 25 cm alto</p>
-                        <p>Precio: 5.00€</p>
-                        <button onclick="agregarAlCarrito('Lámpara de sal', '../img/lsal.jpeg', 5)">Añadir a la cesta</button>
+                        <p>Precio: 15.00€</p>
+                        <button onclick="agregarAlCarrito('Lámpara de sal', '../img/lsal.jpeg', 15)">Añadir a la cesta</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="articulo">
-            <h2>Descripción completa</h2>
+            <h2>Descripción del producto</h2>
             <p>Comprar una lámpara de sal no solo es adquirir un objeto decorativo, sino una inversión en bienestar. Estas lámparas, talladas a mano a partir de cristales de sal del Himalaya, emiten una suave luz que crea una atmósfera cálida y relajante en cualquier espacio.</p>
             <p>Además de su atractivo estético, las lámparas de sal son conocidas por sus posibles beneficios para la salud, ya que se cree que liberan iones negativos que purifican el aire y pueden mejorar la calidad del sueño.</p>
             <p>Este elemento natural no solo agrega un toque distintivo a la decoración, sino que también contribuye a un ambiente más tranquilo y equilibrado, convirtiéndose en una adición armoniosa para el hogar o espacio de trabajo.</p>

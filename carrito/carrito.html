@@ -13,13 +13,18 @@
 <body>
     <header>
         <div class="header-container">
-            <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
-            <a href="../img/img1.jpg" target="_blank">
-                <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
-            </a>
-        </div>
-        <div class="menu-hamburguesa" onclick="toggleMenu()">
-            &#9776; <!-- Icono de hamburguesa Unicode -->
+            <div class="header-container">
+                <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
+                <a href="../img/img1.jpg" target="_blank">
+                    <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
+                </a>
+            </div>
+            <div class="carrito-movil">
+                <div class="carrito">
+                    <a class="carrito-icon" onclick="volverPagina()">&#128722;</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="menu-lista" id="menu-lista">
             <div class="header-container-2">
@@ -30,6 +35,7 @@
                                 &#128269; <!-- Lupa Unicode -->
                             </span>
                             <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        </li>
                         <li><a href="#">Productos y Servicios</a>
                             <ul>
                                 <li><a href="../productos-servicios/servicios.html">Servicios</a></li>
@@ -51,8 +57,10 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="carrito">
-                    <a class="carrito-icon"  onclick="volverPagina()">&#128722;</a>
+                <div class="carrito-ordenador">
+                    <div class="carrito">
+                        <a class="carrito-icon" onclick="volverPagina()">&#128722;</a>
+                        </div>
                     </div>
                 </div>
             </div>

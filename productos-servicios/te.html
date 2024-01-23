@@ -56,19 +56,40 @@
             font-size: 1em;
             cursor: pointer;
         }
+        @media screen and (max-width: 750px) {
+            .producto{
+                width: 39%;
+            }
+            .producto img {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+
+            .producto button {
+                padding: 5px;
+                font-size: 1em;
+                cursor: pointer;
+            }
+        }
 
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
-            <a href="../img/img1.jpg" target="_blank">
-                <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
-            </a>
-        </div>
-        <div class="menu-hamburguesa" onclick="toggleMenu()">
-            &#9776; <!-- Icono de hamburguesa Unicode -->
+            <div class="header-container">
+                <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
+                <a href="../img/img1.jpg" target="_blank">
+                    <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
+                </a>
+            </div>
+            <div class="carrito-movil">
+                <div class="carrito">
+                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="menu-lista" id="menu-lista">
             <div class="header-container-2">
@@ -79,6 +100,7 @@
                                 &#128269; <!-- Lupa Unicode -->
                             </span>
                             <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        </li>
                         <li><a href="#">Productos y Servicios</a>
                             <ul>
                                 <li><a href="../productos-servicios/servicios.html">Servicios</a></li>
@@ -100,8 +122,10 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="carrito">
-                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                <div class="carrito-ordenador">
+                    <div class="carrito">
+                        <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,42 +145,48 @@
                     <img src="../img/te1.jpeg" alt="t1">
                 </div>
                 <p>Té Blanco</p>
-                <button onclick="agregarAlCarrito('Té Blanco', '../img/te1.jpeg', 10)">Añadir a la cesta</button>
+                <p>300g x 5.00€</p>
+                <button onclick="agregarAlCarrito('Té Blanco', '../img/te1.jpeg', 5)">Añadir a la cesta</button>
             </div>
             <div class="producto">
                 <div>
                     <img src="../img/te2.jpeg" alt="t2">
                 </div>
                 <p>Té Pu-erh</p>
-                <button onclick="agregarAlCarrito('Té Pu-erh', '../img/te2.jpeg', 10)">Añadir a la cesta</button>
+                <p>300g x 5.00€</p>
+                <button onclick="agregarAlCarrito('Té Pu-erh', '../img/te2.jpeg', 5)">Añadir a la cesta</button>
             </div>
             <div class="producto">
                 <div>
                     <img src="../img/te3.jpeg" alt="t3">
                 </div>
                 <p>Té Oolong</p>
-                <button onclick="agregarAlCarrito('Té Oolong', '../img/te3.jpeg', 10)">Añadir a la cesta</button>
+                <p>300g x 5.00€</p>
+                <button onclick="agregarAlCarrito('Té Oolong', '../img/te3.jpeg', 5)">Añadir a la cesta</button>
             </div>
             <div class="producto">
                 <div>
                     <img src="../img/te4.jpeg" alt="t4">
                 </div>
                 <p>Té Negro</p>
-                <button onclick="agregarAlCarrito('Té Negro', '../img/te4.jpeg', 10)">Añadir a la cesta</button>
+                <p>300g x 5.00€</p>
+                <button onclick="agregarAlCarrito('Té Negro', '../img/te4.jpeg', 5)">Añadir a la cesta</button>
             </div>
             <div class="producto">
                 <div>
                     <img src="../img/te5.jpeg" alt="t5">
                 </div>
                 <p>Té Verde</p>
-                <button onclick="agregarAlCarrito('Té Verde', '../img/te5.jpeg', 10)">Añadir a la cesta</button>
+                <p>300g x 5.00€</p>
+                <button onclick="agregarAlCarrito('Té Verde', '../img/te5.jpeg', 5)">Añadir a la cesta</button>
             </div>
             <div class="producto">
                 <div>
                     <img src="../img/te6.jpeg" alt="t6">
                 </div>
                 <p>Té de Hierbas</p>
-                <button onclick="agregarAlCarrito('Té de Hierbas', '../img/te6.jpeg', 10)">Añadir a la cesta</button>
+                <p>300g x 5.00€</p>
+                <button onclick="agregarAlCarrito('Té de Hierbas', '../img/te6.jpeg', 5)">Añadir a la cesta</button>
             </div>
         </section>
         </div>

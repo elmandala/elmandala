@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="img/img1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="general.css">
     <script src="general.js"></script>
@@ -49,6 +49,13 @@
             width: 100%;
             margin: 0;
         }
+        .contenedor-yoga {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+        }
         .columna {
             flex: 1;
             padding: 10px;
@@ -86,13 +93,8 @@
             border-right: 1px solid #000; /* 1px de grosor, color negro */
 
         }
-
         .imagen-sv {
             width: 90%;
-            height: auto;          
-        }
-        .imagen-sm {
-            width: 50%;
             height: auto;          
         }
         .video {
@@ -100,13 +102,12 @@
             height: auto; 
             margin-top: 20px;         
         }
-        .texto-cadiz{
-            text-align: center;
-        }
+
+    /*CAROUSEL*/
         /*Contenido del CAROUSEL (CONTROLES, INDICADORES Y COLUMNAS DE CONTENIDO)*/
         .carousel{
         position:relative;
-        width:55rem;
+        width:100%;
         height: auto;
         margin: 1rem;
         padding-right:1rem;
@@ -166,27 +167,23 @@
 
         /*MODELADO DE LAS MEDIDAS DE LA IMAGEN DEL CAROUSEL*/
         .col img {
-        width: 30rem;
-        height: 15rem;
+        width: 15rem;
+        height: auto;
         object-fit: cover;
         margin: 0;
         }
 
         /*MODELADO DE LOS CONTROLES DEL CAROUSEL*/
-
         .carousel-item-next,.carousel-item-prev,.carousel-item.active{
         display:block;
         }
-
         .carousel-item-next,.carousel-item-prev{
         position:absolute;
         top:0;
         }
-
         .carousel-item-next.carousel-item-left,.carousel-item-prev.carousel-item-right{
         transform:translateX(0);
         }
-
         .active.carousel-item-right,.carousel-item-next{
         transform:translateX(100%);
         }
@@ -203,112 +200,161 @@
         display:flex;
         align-items:center;
         justify-content:center;
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
         color:#fff;
         text-align:center;
         opacity:.5;
         }
 
         .carousel-control-prev{
-        left: -2rem;
+        left: 10rem;
         top: 6rem;
         }
         .carousel-control-next{
-        right:-2rem;
+        right:10rem;
         top: 6rem;
         }
 
         /*HOVER DE LOS CONTROLADORES DE CAROUSEL*/
         .carousel-control-next:hover,.carousel-control-prev:hover{
         opacity:.9;
-        
         }
-
 
         /*TAMAÑO DE LOS CONTROLADORES DEL CAROUSEL*/
         .carousel-control-next-icon,.carousel-control-prev-icon{
         width:2rem;
         height:2rem;
         }
-
+       
         /*MODELADO DE LOS INDICADORES*/
         .carousel-indicators{
-        position:absolute;
-        right:0;
-        bottom: 10px;
-        left:4rem;
-        z-index:15;
-        display:flex;
-        justify-content:center;
-        padding-left:0;
-        margin-right:15%;
-        margin-left:15%;
-        list-style:none;
+            position:absolute;
+            right:0;
+            bottom: 0px;
+            left:4rem;
+            right: 4rem;
+            z-index:15;
+            display:flex;
+            justify-content:center;
+            padding-left:0;
+            margin-right:15%;
+            margin-left:15%;
+            list-style:none;
         }
         .carousel-indicators li{
-        position:relative;
-        flex:0 1 auto;
-        width:30px;
-        height:3px;
-        margin-right:3px;
-        margin-left:3px;
-        text-indent:-999px;
-        background-color:rgba(255,255,255,.5);
+            position:relative;
+            flex:0 1 auto;
+            width:30px;
+            height:3px;
+            margin-right:3px;
+            margin-left:3px;
+            text-indent:-999px;
+            background-color:rgba(255,255,255,.5);
         }
         .carousel-indicators li::before{
-        position:absolute;
-        top:-10px;
-        left:0;
-        display:inline-block;
-        width:100%;
-        height:10px;
-        content:"";
+            position:absolute;
+            top:-10px;
+            left:0;
+            display:inline-block;
+            width:100%;
+            height:10px;
+            content:"";
         }
         .carousel-indicators li::after{
-        position:absolute;
-        bottom:-10px;
-        left:0;display:inline-block;
-        width:100%;
-        height:10px;
-        content:"";
+            position:absolute;
+            bottom:-10px;
+            left:0;display:inline-block;
+            width:100%;
+            height:10px;
+            content:"";
         }
         .carousel-indicators .active{
-        background-color:#ffffff;
+            background-color:#ffffff;
         }
         .carousel-caption{
-        position:absolute;
-        right:15%;
-        bottom:20px;
-        left:15%;
-        z-index:10;
-        padding-top:20px;
-        padding-bottom:20px;
-        color:#fff;
-        text-align:center;
-        }
-        .index-contenedor{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        max-width: 90rem;
-        margin-left: 70px;
-        margin-right: 70px;
+            position:absolute;
+            right:15%;
+            bottom:20px;
+            left:15%;
+            z-index:10;
+            padding-top:20px;
+            padding-bottom:20px;
+            color:#fff;
+            text-align:center;
         }
 
-    </style>   
+    /*AJUSTAR MEDIDA MOVIL*/
+        @media screen and (max-width: 950px) {
+            .carousel-control-prev{
+                left: 5rem;
+                top: 6rem;
+            }
+            .carousel-control-next{
+                right:5rem;
+                top: 6rem;
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            .titulo-sal {
+                font-size: 30px;
+            }
+            .imagen-sal {
+                width: 80%;
+            }
+            .contenedor-yoga {
+                flex-direction: column;
+            }
+            .columna, .columna-central {
+                flex: 1;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .row {
+                flex-direction: column;
+            }
+            .video {
+                width: 100%;
+            }
+            .carousel-control-prev{
+                left: -2rem;
+                top: 6rem;
+            }
+            .carousel-control-next{
+                right:-2rem;
+                top: 6rem;
+            }
+        }
+    </style>
+    <script>
+        function mostrarMasParrafos(idContenido) {
+            var parrafosAdicionales = document.getElementById(idContenido);
+
+            if (parrafosAdicionales.style.display === 'none') {
+                parrafosAdicionales.style.display = 'block';
+            } else {
+                parrafosAdicionales.style.display = 'none';
+            }
+        }
+
+    </script>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="index.html">EL MANDALA</a></h1>
-            <a href="img/img1.jpg" target="_blank">
-                <img id="logo-header" src="img/img1.jpg" alt="logo" width="100px" height="100px">
-            </a>
-        </div>
-        <div class="menu-hamburguesa" onclick="toggleMenu()">
-            &#9776; <!-- Icono de hamburguesa Unicode -->
+            <div class="header-container">
+                <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="index.html">EL MANDALA</a></h1>
+                <a href="img/img1.jpg" target="_blank">
+                    <img id="logo-header" src="img/img1.jpg" alt="logo" width="100px" height="100px">
+                </a>
+            </div>
+            <div class="carrito-movil">
+                <div class="carrito">
+                    <a class="carrito-icon" href="carrito/carrito.html">&#128722;</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="menu-lista" id="menu-lista">
             <div class="header-container-2">
@@ -319,6 +365,7 @@
                                 &#128269; <!-- Lupa Unicode -->
                             </span>
                             <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        </li>
                         <li><a href="#">Productos y Servicios</a>
                             <ul>
                                 <li><a href="productos-servicios/servicios.html">Servicios</a></li>
@@ -340,13 +387,14 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="carrito">
-                    <a class="carrito-icon" href="carrito/carrito.html">&#128722;</a>
+                <div class="carrito-ordenador">
+                    <div class="carrito">
+                        <a class="carrito-icon" href="carrito/carrito.html">&#128722;</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </header>
     <div class="cuerpo">
         <div class="articulo">
@@ -357,7 +405,7 @@
         </div>
         <div class="articulo">
             <h1>Servicios</h1>
-            <div class="container">
+            <div class="contenedor">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -365,7 +413,6 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -429,8 +476,13 @@
         <div class="articulo">
             <h2>Lámparas de sal por el mundo</h2>
             <div class="texto-lsmundo">
-                <p>Las lámparas de sal son populares en todo el mundo y se han convertido en elementos de decoración y bienestar en muchos hogares. Principalmente, estas lámparas están hechas de cristales de sal del Himalaya, que se extraen de las minas en la región montañosa de Pakistán, cerca de la cordillera del Himalaya. Sin embargo, su presencia se ha extendido a nivel global, y se pueden encontrar en una variedad de formas y tamaños, adaptándose a diferentes estilos de decoración.</p>
-                </div>   
+                <p>Las lámparas de sal son populares en todo el mundo y se han convertido en elementos de decoración y bienestar en muchos hogares. Principalmente, estas lámparas están hechas de cristales de sal del Himalaya, que se extraen de las minas en la región montañosa de Pakistán, cerca de la cordillera del Himalaya. Sin embargo, su presencia se ha extendido a nivel global, y se pueden encontrar en una variedad de formas y tamaños, adaptándose a diferentes estilos de decoración. <button onclick="mostrarMasParrafos('additional-paragraphs')" style="cursor: pointer;">Ver más</button></p>
+                <div id="additional-paragraphs" style="display: none;">
+                    <p>En los mercados occidentales, las lámparas de sal han ganado popularidad como elementos decorativos que aportan un toque rústico y natural a los espacios interiores. A menudo, se esculpen y pulen a mano para resaltar la singularidad de cada cristal de sal. Se presentan en diversas formas, desde bloques sólidos hasta estructuras talladas más intrincadas, y se colocan en bases de madera o en soportes de metal.</p>
+                    <p>Estas lámparas no solo se utilizan por su atractivo visual, sino que también se promocionan por sus posibles beneficios para la salud. Se cree que emiten iones negativos cuando se calientan con una bombilla, contribuyendo así a mejorar la calidad del aire al neutralizar los iones positivos. Además, la luz suave y cálida que emiten se considera relajante y propicia para crear un ambiente acogedor.</p>
+                    <p>En resumen, las lámparas de sal son un fenómeno global, desde su origen en las montañas del Himalaya hasta su difusión como elementos decorativos y de bienestar en hogares de todo el mundo.</p>    
+                </div>
+            </div>   
             <div class="contenedor">
                 <div>
                     <img src="img/lsal_1.jpeg" alt="Lámpara de Sal" class="imagen-lsmundo">
@@ -445,21 +497,16 @@
         </div>
 
         <div class="articulo">
-            <h1>¿Por qué en el mandala estamos tan concienciados con la salud mental?</h1>
+            <h2>¿Por qué en el mandala estamos tan concienciados con la salud mental?</h2>
             <div>
                 <div>
                     <p>Prevalencia de trastornos mentales: Se estima que alrededor del 9-10% de la población española padece algún tipo de trastorno mental en un año dado, según datos de la Organización Mundial de la Salud (OMS).</p>
-                </div>
-                <div class="contenedor">
-                    <div>
-                        <img src="" alt="Salud mental" class="imagen-sm">
-                    </div>
                 </div>
             </div>
         </div>
 
         <div class="articulo">
-            <div class="contenedor">
+            <div class="contenedor-yoga">
                 <!-- Columna izquierda con título -->
                 <div class="columna">
                   <h2 class="titulo-yoga">¿Qué es el yoga?</h2>
@@ -492,11 +539,15 @@
         </div>
 
         <div class="articulo">
-            <h1>San Valentín en El mandala</h1>
+            <h2>San Valentín en El mandala</h2>
             <div>
                 <div>
-                    <p>El yoga desempeña un papel notable en las relaciones románticas al ofrecer no solo beneficios físicos, sino también una profunda conexión emocional. La práctica regular de yoga fomenta la conciencia plena y la aceptación personal, creando individuos más equilibrados y seguros.</p>
-                    </div>
+                    <p>El yoga desempeña un papel notable en las relaciones románticas al ofrecer no solo beneficios físicos, sino también una profunda conexión emocional. La práctica regular de yoga fomenta la conciencia plena y la aceptación personal, creando individuos más equilibrados y seguros. <button onclick="mostrarMasParrafos('additional-paragraphs-2')" style="cursor: pointer;">Ver más</button></p>
+                    <div id="additional-paragraphs-2" style="display: none;">
+                        <p>En el contexto de las relaciones, esto se traduce en una mayor capacidad para comprender y apoyar a la pareja. La calma mental cultivada a través del yoga contribuye a manejar el estrés y las tensiones cotidianas, promoviendo un ambiente relajado y propicio para la comunicación efectiva. Además, las posturas compartidas y la sincronización respiratoria en las clases de yoga pueden fortalecer la conexión física y emocional entre los socios, creando un espacio compartido que va más allá de lo físico.</p>
+                        <p>En resumen, el yoga emerge como un catalizador que no solo mejora la salud individual, sino que también enriquece y fortalece las relaciones románticas al cultivar la empatía, la aceptación y la conexión profunda entre los compañeros.</p>            
+                    </div>    
+                </div>
                 <div class="contenedor">
                     <div>
                         <img src="img/sv1.jpeg" alt="San valentín" class="imagen-sv">
@@ -508,6 +559,7 @@
             </div>
         </div>
         <div class="articulo">
+            <h2>Video corporativo</h2>
             <video class="video" controls>
                 <source src="videos/elmandala.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
@@ -578,19 +630,6 @@
                     console.log('FAILED...', error);
                     alert('Error al realizar la compra. Por favor, inténtelo de nuevo.');
                 });
-        }
-
-    </script>
-    
-    <script>
-        // Función para mostrar/ocultar el menú de hamburguesa en dispositivos móviles
-        function toggleMenu() {
-            var menu = document.getElementById("menu-lista");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
         }
 
     </script>

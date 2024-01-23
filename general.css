@@ -156,6 +156,13 @@ color: black; /* Color del enlace */
 font-size: 30px;
 cursor: pointer;
 }
+.carrito-movil{
+    display:none;
+    right: 0;
+}
+.carrito-ordenador{
+    display: block;
+}
 
 /*FOOTER*/
 footer {
@@ -195,89 +202,128 @@ margin-bottom: 20px; /* Ajusta según sea necesario */
 border-bottom: none; /* Elimina la línea negra del último artículo */
 }
 
-
-/* Agrega estilos para el menú de hamburguesa */
-.menu-hamburguesa {
-display: none;
-cursor: pointer;
-font-size: 20px; /* Tamaño del icono */
-}
-
 /* Estilos adicionales para la versión móvil */
 @media screen and (max-width: 750px) {
     body {
         max-width: 80%;
     }
-
     /*header*/
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
     .titulo-cabecera{
-        font-size: 50px;
+        font-size: 20px;
         margin: 0;
     }
     .titulo-cabecera-interno{
         text-decoration: none;
         color: black;
     }
-    header {
-        width: 100%;
-        text-align: center;
-        padding-bottom: 10px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .header-container {
-        position: relative;
-        list-style: none;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
     #logo-header {
         margin-left: 20px;
         margin-bottom: 0;
-        width: 50px; /* Tamaño deseado */
+        width: 40px; /* Tamaño deseado */
         height: auto;
         align-self: flex-start; /* Alinea la imagen en la parte superior del contenedor */
     }
-    .menu-lista {
+    .carrito {
+        position: relative;
+        padding: 0;
+        align-items: center;
+        margin-left: 0px;
+        margin-bottom: 15px;
+        }
+    .carrito-movil{
+        display:block
+    }
+    .carrito-ordenador{
         display: none;
     }
-    .menu-hamburguesa {
-        display: flex;
-        cursor: pointer;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        font-size: 30px; /* Tamaño del icono */
-        align-self: flex-start; /* Alinea el bloque en la parte superior */
-    }
-    .menu-hamburguesa a {
-        display: block;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-    }
-    .menu-hamburguesa-content {
-        display: none;
-        position: absolute;
-        background-color: #333;
-        min-width: 160px;
-        z-index: 1;
-    }
-    .menu-hamburguesa-content a {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
+    .header-container-2 {
+        flex-direction: column;
+        width: 90%;
+    }    
+    nav {
+        width: 100%;
+        padding: 10px;
         text-align: left;
     }
-    .menu-hamburguesa:hover .menu-hamburguesa-content {
-        display: block;
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
     }
+    nav ul li {
+        position: static; /* This will be the anchor point for the absolute positioning of the dropdown */
+        border: 1px solid black;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 5px; /* Ajusta el espacio entre los elementos de la lista si es necesario */
+        width: 100%;
+        display: flex; /* Hace que los elementos flexibles */
+        align-items: center; /* Centra verticalmente los elementos */
+        justify-content: center;
+        z-index: 1000; /* High z-index to ensure dropdowns are above other content */
+    }
+    nav ul ul {
+        position: static;
+        bottom: 0; /* This positions the dropdown right below the parent li */
+        left: 0; /* Aligns the dropdown with the left edge of the parent li */
+        display: none; /* Hides the dropdown initially */
+        background-color: none; /* Optional: sets a background color for the dropdown */
+        z-index: 1000; /* Ensures the dropdown is on top of other elements */
+        width: 100%; /* Sets the width of the dropdown */
+        overflow: hidden; /* Prevents the dropdown from extending beyond the parent li */
+    }
+    
+    nav ul li:hover ul {
+        opacity: 1;
+        background-color:transparent;
+    }
+    
+    nav ul li a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    nav ul li ul li{
+        width: 70%;
+    }
+        /* Footer */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-column {
+        display: block;
+        text-align: left;
+        width: 100%;
+    }
+    .footer-iconos {
+        width: 50%;
+    }
+    
+    .footer-column iframe {
+        width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+    }
+    #logo-footer {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Styles for the close button */
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
 }
 @media screen and (min-width: 751px) {
     .menu-lista {

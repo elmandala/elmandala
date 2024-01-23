@@ -93,18 +93,56 @@
             font-size: 1em;
             cursor: pointer;
         }
+
+        @media screen and (max-width: 750px) {
+            .imagen-hc {
+                width: 100%;
+                height: auto;          
+            }
+            .contenedor{
+                flex-direction: column;
+            }
+            #formulario-contenedor {
+                width: 100%;
+                box-sizing: border-box;
+                background-color: #f2f2f2; /* Color de fondo del cuadro */
+                border: 1px solid black; /* Borde del cuadro */
+                border-radius: 8px; /* Bordes redondeados */
+                margin-top: 10px;
+                margin-left: 0px; /* Añadido para separar el formulario de la imagen */
+            }
+
+            #formulario-contenedor label {
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            #formulario-contenedor input,
+            #formulario-contenedor textarea {
+                width: 100%; /* Se ajusta para compensar el padding */
+                padding: 10px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+            }
+        }
+        
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
-            <a href="../img/img1.jpg" target="_blank">
-                <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
-            </a>
-        </div>
-        <div class="menu-hamburguesa" onclick="toggleMenu()">
-            &#9776; <!-- Icono de hamburguesa Unicode -->
+            <div class="header-container">
+                <h1 class="titulo-cabecera"><a class="titulo-cabecera-interno" href="../index.html">EL MANDALA</a></h1>
+                <a href="../img/img1.jpg" target="_blank">
+                    <img id="logo-header" src="../img/img1.jpg" alt="logo" width="100px" height="100px">
+                </a>
+            </div>
+            <div class="carrito-movil">
+                <div class="carrito">
+                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="menu-lista" id="menu-lista">
             <div class="header-container-2">
@@ -115,6 +153,7 @@
                                 &#128269; <!-- Lupa Unicode -->
                             </span>
                             <input type="text" id="search-field" placeholder="Buscar en la página" oninput="buscarEnPagina()">
+                        </li>
                         <li><a href="#">Productos y Servicios</a>
                             <ul>
                                 <li><a href="../productos-servicios/servicios.html">Servicios</a></li>
@@ -136,8 +175,10 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="carrito">
-                    <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                <div class="carrito-ordenador">
+                    <div class="carrito">
+                        <a class="carrito-icon" href="../carrito/carrito.html">&#128722;</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -82,3 +82,9 @@ hr {
     margin-left: 10px;
     text-align: left;
 }
+
+@media screen and (max-width: 750px) {
+    form button{
+        margin-top: 10px;
+    }
+}
